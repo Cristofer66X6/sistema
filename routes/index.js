@@ -7,28 +7,28 @@ const router = express.Router();
 
 // Ruta principal para la página estática
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/index.html'));
+  res.sendFile(path.join(__dirname, './docs/index.html'));
 });
 
 // Ruta para la página del logo
 router.get('/logo.html', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/logo.html'));
+  res.sendFile(path.join(__dirname, './docs/logo.html'));
 });
 
 router.get('/font.html', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/font.html'));
+  res.sendFile(path.join(__dirname, './docs/font.html'));
 });
 
 router.get('/color.html', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/color.html'));
+  res.sendFile(path.join(__dirname, './docs/color.html'));
 });
 
 router.get('/mascota.html', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/mascota.html'));
+  res.sendFile(path.join(__dirname, './docs/mascota.html'));
 });
 
 router.get('/fundacion.html', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/fundacion.html'));
+  res.sendFile(path.join(__dirname, './docs/fundacion.html'));
 });
 
 
