@@ -1,0 +1,20 @@
+{
+  "name": "sistema-de-disenos",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "lit-html": "^3.2.1",
+    "sio-moduler": "^1.0.5",
+    "sioelement": "^2.0.2"
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascota</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="icon" href="/PNG/PNG/7.png" type="image/x-icon">
+    <script type="module" src="/elements/hello-world.js"></script>
+    <script type="module" src="/elements/logo-component.js"></script>
+    <script type="module" src="/elements/image-downloader.js"></script>
+    <style>
+        /* Estilos del menú lateral */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #ffc629; /* Color de fondo del menú */
+            color: black; /* Color del texto */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+            z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+        }
+
+        .sidebar a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #151d33; /* Color al pasar el mouse */
+            color: white; /* Cambia el color del texto al pasar el mouse */
+        }
+
+        body {
+            margin-left: 220px; /* Deja espacio para el menú */
+        }
+
+        .color-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em; /* Espacio entre los recuadros */
+            padding: 1em;
+        }
+
+        .color-box {
+            display: flex; /* Usar flexbox para disposición horizontal */
+            padding: 1em;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .color-swatch {
+            width: 150px; /* Ancho del recuadro de color */
+            height: 150px; /* Alto del recuadro de color */
+            border-radius: 8px; /* Bordes redondeados */
+            margin-right: 1em; /* Espacio entre color y texto */
+        }
+
+        .color-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrar contenido verticalmente */
+        }
+
+    </style>
+</head>
+<body class="logo-page">
+    <div class="sidebar">
+        <h2><a href="/">Identidad COHACER</a></h2>
+        <a href="/logo.html">Logo</a>
+        <a href="/font.html">Tipografía</a>
+        <a href="/color.html">Color</a>
+        <a href="/mascota.html">ESMI</a>
+        <a href="/fundacion.html">FUNDACIÓN</a>
+    </div>
+    
+    <header>
+        <div class="hello-container">
+            <hello-world id="logo" text="LOGO">Mascota</hello-world>
+            <img src="/PNG/PNG/26.png" alt="Descripción de la imagen" class="hello-image">
+        </div>    
+    </header> 
+    
+    <h1>¿Quién es ESMI?</h1>
+    <p class="esmi-description">ESMI, es nuestra mascota de COHACER, la cual es un amigable perro pug, ESMI simboliza lealtad, confianza y acompañamiento.</p>
+    <p class="esmi-description">El nombre de ESMI es un juego de palabras, el cual es "ESMI titulación".</p>
+    <p class="esmi-description">ESMI lleva siendo parte de la empresa COHACER aproximadamente hace 3 años.</p>
+    
+    <section class="mascota">
+        <h2>ESMI Icono</h2>
+        <p class="esmi-description">
+            <span class="title">ESMI</span>
+            <br> 
+            Suele ser usado en temas informativos, como para responder alguna pregunta o dar un informe general en COHACER.
+        </p>
+        <logo-component imageUrl="/PNG/PNG/26.png" description="Icono de la mascota COHACER, ESMI"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        
+        <logo-component imageUrl="/PNG/PNG/27.png" description="Icono de la mascota COHACER, ESMI"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+       
+        <logo-component imageUrl="/PNG/PNG/28.png" description="Icono de la mascota COHACER, ESMI"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+       
+        <logo-component imageUrl="/PNG/PNG/29.png" description="Icono de la mascota COHACER, ESMI"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <br>
+
+        <h3>ESMI en forma completa</h3>
+        <logo-component imageUrl="/PNG/PNG/esmi_2.png" description=" ✅Uso permitido: Saludando y sacando la lengua"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <logo-component imageUrl="/PNG/PNG/esmi_3.png" description=" ✅Uso permitido: Con las manos hacia atrás sacando un poco la lengua"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <logo-component imageUrl="/PNG/PNG/esmi_4.png" description=" ✅Uso permitido: Saludando y sacando la lengua un poco"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <logo-component imageUrl="/PNG/PNG/esmi_5.png" description=" ✅Uso permitido: Saludando y con la lengua un poco entre metida"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <logo-component imageUrl="/PNG/PNG/esmi_6.png" description=" ✅Uso permitido: Con las manos hacia atrás sacando la lengua"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <logo-component imageUrl="/PNG/PNG/esmi_7.png" description=" ✅Uso permitido: Saludando con la mano izquierda"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+        <logo-component imageUrl="/PNG/PNG/esmi_8.png" description=" ✅Uso permitido: Con ambas manos alzadas y la lengua de fuera"></logo-component>
+        <image-downloader></image-downloader>
+        <br>
+    </section>
+
+    <footer>
+        
+        <a href="/font.html" class="btn-primary2">FUENTES</a>
+        <a href="/fundacion.html" class="btn-primary2">FUNDACIÓN</a>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

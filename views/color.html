@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="icon" href="/PNG/PNG/7.png" type="image/x-icon">
+    <style>
+        /* Estilos del menú lateral */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #ffc629; /* Color de fondo del menú */
+            color: black; /* Color del texto */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+            z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+        }
+
+        .sidebar a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #151d33; /* Color al pasar el mouse */
+            color: white; /* Cambia el color del texto al pasar el mouse */
+        }
+
+        body {
+            margin-left: 220px; /* Deja espacio para el menú */
+        }
+
+        .color-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em; /* Espacio entre los recuadros */
+            padding: 1em;
+        }
+
+        .color-box {
+            display: flex; /* Usar flexbox para disposición horizontal */
+            padding: 1em;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .color-swatch {
+            width: 150px; /* Ancho del recuadro de color */
+            height: 150px; /* Alto del recuadro de color */
+            border-radius: 8px; /* Bordes redondeados */
+            margin-right: 1em; /* Espacio entre color y texto */
+        }
+
+        .color-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrar contenido verticalmente */
+        }
+
+        /* Nuevo estilo para aumentar el tamaño del texto "Colores" */
+        hello-world {
+            font-size: 4em; /* Aumenta el tamaño de la fuente */
+            font-weight: 700; /* Hace el texto más negrita */
+            margin: 0; /* Elimina márgenes por defecto */
+            flex: 0 1 auto; /* Permite que el texto ocupe solo el espacio necesario */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2><a href="/">Identidad COHACER</a></h2>
+        <a href="/logo.html">Logo</a>
+        <a href="/font.html">Tipografía</a>
+        <a href="/color.html">Color</a>
+        <a href="/mascota.html">ESMI</a>
+        <a href="/fundacion.html">FUNDACIÓN</a>
+    </div>
+
+    <header>
+        <div class="hello-container">
+            <hello-world id="logo" text="LOGO">Colores</hello-world>
+            <img src="/PNG/PNG/29.png" alt="Descripción de la imagen" class="hello-image">
+        </div>    
+    </header>
+
+    <section class="color-section">
+        <div class="color-box">
+            <div class="color-swatch" style="background-color: #876b3f;"></div> 
+            <div class="color-info">
+                <h2>Marrón tostado, se usa en Logotipo</h2>
+                <p>HEX: #876b3f</p>
+                <p>CMYK: 0%, 21%, 53%, 47%</p>
+                <p>RGB: 135, 107, 63.</p>
+            </div>
+        </div>
+
+        <div class="color-box">
+            <div class="color-swatch" style="background-color: #8c8880;"></div>
+            <div class="color-info">
+                <h2>gris piedra, se usa en Logotipo</h2>
+                <p>HEX: #8c8880</p>
+                <p>CMYK: 0%, 3%, 9%, 45%</p>
+                <p>RGB: 140, 136, 128</p>
+            </div>
+        </div>
+
+        <div class="color-box">
+            <div class="color-swatch" style="background-color: #202070;"></div>
+            <div class="color-info">
+                <h2>Cazul marino, se usa en los Colores Complementarios</h2>
+                <p>HEX: #202070</p>
+                <p>CMYK: 71%, 71%, 0%, 56%</p>
+                <p>RGB: 33, 33, 112</p>
+            </div>
+        </div>
+
+        <div class="color-box">
+            <div class="color-swatch" style="background-color: #ffc629;"></div>
+            <div class="color-info">
+                <h2>amarillo dorado, se usa en los Colores Complementarios</h2>
+                <p>HEX: #ffc629</p>
+                <p>CMYK: 0%, 22%, 84%, 0%</p>
+                <p>RGB: 255, 199, 41</p>
+            </div>
+        </div>
+
+        <div class="color-box">
+            <div class="color-swatch" style="background-color: #151d33;"></div>
+            <div class="color-info">
+                <h2>azul marino profundo, se usa en los Colores Complementarios</h2>
+                <p>HEX: #151d33</p>
+                <p>CMYK: 59%, 43%, 0%, 80%</p>
+                <p>RGB: 21, 29, 51</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="/font.html" class="btn-primary2">Tipos de Letras</a>
+        <a href="/mascota.html" class="btn-primary2">Mascota</a>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

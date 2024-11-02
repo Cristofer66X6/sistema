@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipos de Letras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/PNG/PNG/7.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/estilo.css">
+  <script type="module" src="/elements/hello-world.js"></script>
+  <style>
+    /* Estilos del menú lateral */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #ffc629; /* Color de fondo del menú */
+        color: black; /* Color del texto */
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+        z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+        background-color: #151d33; /* Color al pasar el mouse */
+        color: white; /* Cambia el color del texto al pasar el mouse */
+    }
+
+    body {
+        margin-left: 220px; /* Deja espacio para el menú */
+    }
+
+    .font-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em; /* Espacio entre las secciones de fuentes */
+        padding: 1em;
+    }
+
+    .font-info-container {
+        display: flex; /* Usar flexbox para disposición horizontal */
+        justify-content: space-between; /* Separar elementos a los extremos */
+    }
+
+    .info-box {
+        width: 50%; /* Ancho del recuadro de información */
+    }
+
+    .font-box {
+        width: 50%; /* Ancho del recuadro de fuente */
+    }
+  </style>
+</head>
+<body class="font-page">
+  <div class="sidebar">
+    <h2><a href="/">Identidad COHACER</a></h2>
+    <a href="/logo.html">Logo</a>
+    <a href="/font.html">Tipografía</a>
+    <a href="/color.html">Color</a>
+    <a href="/mascota.html">ESMI</a>
+    <a href="/fundacion.html">FUNDACIÓN</a>
+  </div>
+
+  <header>
+    <div class="hello-container">
+      <hello-world id="logo" text="LOGO">Tipografía</hello-world>
+      <img src="/PNG/PNG/26.png" alt="Descripción de la imagen" class="hello-image">
+    </div>   
+  </header>
+      
+  <section class="font-section">
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-bernadette">Bernadette</h2>
+        <p class="font-bernadette">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE UTILIZA PARA SLOGANS, Bernadette es una tipografía con un toque artístico, ideal para proyectos que buscan un enfoque más personalizado y creativo.</p>
+      </div>
+    </div>
+
+    <!-- Repite el mismo patrón para cada tipo de letra -->
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-montserrat-regular">Montserrat - Regular</h2>
+        <p class="font-montserrat-regular">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE UTILIZA PARA TEXTOS NORMALES, Montserrat es una tipografía sans-serif moderna, diseñada por Julieta Ulanovsky en 2010. Es popular por su claridad y elegancia, ideal para títulos y textos de gran tamaño.</p>
+      </div>
+    </div>
+
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-montserrat-bold">Montserrat - Bold</h2>
+        <p class="font-montserrat-bold">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE UTILIZA PARA TITULOS, Versión en negrita de Montserrat, perfecta para dar énfasis y destacar secciones importantes.</p>
+      </div>
+    </div>
+
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-ubuntu-regular">Ubuntu - Regular</h2>
+        <p class="font-ubuntu-regular">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE UTILIZA PARA TEXTO NORMAL, Ubuntu es una tipografía sans-serif diseñada para ser legible en pantallas, creada por Dalton Maag. Su diseño es amigable y moderno.</p>
+      </div>
+    </div>
+
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-ubuntu-bold">Ubuntu - Bold</h2>
+        <p class="font-ubuntu-bold">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE USA PARA TITULOS, La versión en negrita de Ubuntu proporciona un impacto visual más fuerte, ideal para encabezados y texto destacado.</p>
+      </div>
+    </div>
+
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-eras-bold">Eras Bold ITC</h2>
+        <p class="font-eras-bold">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE UTILIZA PARA TITULOS, Eras Bold ITC es una tipografía sans-serif geométrica, conocida por su apariencia limpia y moderna, popular en publicidad y diseño gráfico.</p>
+      </div>
+    </div>
+
+    <div class="font-info-container">
+      <div class="font-box">
+        <h2 class="font-bernadette">Bernadette</h2>
+        <p class="font-bernadette">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+        abcdñefghijklmnopqrstuvwxyza<br>
+        1234567890</p>
+      </div>
+      <div class="info-box">
+        <h3>Información</h3>
+        <p>SE UTILIZA PARA SLOGANS, Bernadette es una tipografía con un toque artístico, ideal para proyectos que buscan un enfoque más personalizado y creativo.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="/logo.html" class="btn-primary2">IDENTIDAD</a>
+    <a href="/color.html" class="btn-primary2">COLOR</a>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
