@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Ruta principal para la página estática
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './docs/index.html'));
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // Ruta para la página del logo
