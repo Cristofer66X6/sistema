@@ -44,9 +44,9 @@
 body {
     margin: 0; /* Sin margen en el cuerpo */
     overflow-x: hidden; /* Evitar scroll horizontal */
-    overflow-y: hidden; /* Evitar scroll vertical */
+    overflow-y: auto; /* Permitir scroll vertical */
     font-family: Arial, sans-serif; /* Fuente base */
-    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
+    height: auto; /* Altura automática para permitir scroll */
 }
 
 .color-section {
@@ -57,9 +57,10 @@ body {
     margin-left: 220px; /* Deja espacio para el menú lateral */
     max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
     box-sizing: border-box; /* Incluye el padding en el ancho */
-    height: calc(100vh - 20px); /* Ajusta la altura para evitar el scroll */
+    /* No fijes la altura aquí para permitir el scroll */
     overflow-y: auto; /* Permite scroll en el contenido si es necesario */
 }
+
 
 /* Aquí aseguramos que los recuadros ocupen el 100% de la pantalla en móvil */
 .color-box {
