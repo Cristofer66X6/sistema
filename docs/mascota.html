@@ -107,8 +107,24 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s ease;
-            margin: 15px 0; /* Ajusta el margen para aumentar el espacio entre los botones */
-          }
+            margin: 30px 0; /* Aumentar el margen superior e inferior */
+        }
+        .btn-primary11 {
+            padding: 20px 40px;
+            background-color: #ffc629;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+            margin: 30px 0 15px; /* Aumentar el margen superior para más espacio */
+        }
+        
+        .spacer {
+            width: 40px; /* Ajusta el ancho según necesites */
+            display: inline-block; /* Esto permitirá que se mantenga en línea con los botones */
+        }
+        
           
     </style>
     
@@ -186,7 +202,8 @@
     <footer>
         
         <a href="/font.html" class="btn-primary2">FUENTES</a>
-        <a href="/fundacion.html" class="btn-primary2">FUNDACIÓN</a>
+        <div class="spacer"></div>
+        <a href="/fundacion.html" class="btn-primary11">FUNDACIÓN</a>
     </footer>
 
     <script src="/js/script.js"></script>
