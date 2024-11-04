@@ -25,17 +25,29 @@ class LogoComponent extends SioElement {
             margin: 20px 0;
         }
 
-        .container {
-            display: flex;
-            align-items: center; /* Centra verticalmente */
-            background-color: #d0d0d0; /* Color gris más oscuro */
-            padding: 20px; /* Espaciado interno */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            width: 100%; /* Ocupa todo el ancho disponible */
-            max-width: 800px; /* Ancho máximo para el contenedor */
-            margin: 0 auto; /* Centra el contenedor */
-        }
+        /* Estilos generales del container */
+.container {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    background-color: #d0d0d0; /* Color gris más oscuro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 800px; /* Ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Estilos para pantallas móviles (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 100vw; /* Asegura que ocupe todo el ancho del viewport en móvil */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-right: 0; /* Elimina el margen derecho */
+        padding: 10px; /* Ajusta el padding para mejorar el diseño en móvil */
+    }
+}
+
 
         .image-wrapper {
             background-color: #fff; /* Fondo blanco para la imagen */
