@@ -11,7 +11,7 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-    /* Estilos del menú lateral */
+ /* Estilos del menú lateral */
 .sidebar {
     position: fixed;
     top: 0;
@@ -133,7 +133,10 @@ body {
     overflow-wrap: break-word; /* Permite que las palabras largas se rompan */
     max-width: 100%; /* Asegura que no se salga del contenedor */
     white-space: normal; /* Permite el uso de múltiples líneas */
+    display: flex; /* Asegura que el contenedor flexible */
+    flex-direction: column; /* Coloca la descripción debajo de la imagen */
 }
+
 
 </style>
 
