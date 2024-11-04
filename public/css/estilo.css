@@ -246,6 +246,10 @@ image-downloader {
 
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal */
+  }
+
   .hello-container {
     flex-direction: column;
     align-items: center;
@@ -275,6 +279,7 @@ image-downloader {
 
   .container {
     width: 90%; /* Contenedor más ancho en móviles */
+    max-width: 100%; /* Asegura que no exceda el contenedor */
   }
 
   .font-section {
@@ -314,6 +319,5 @@ image-downloader {
     line-height: 1.2; /* Espaciado entre líneas */
     padding: 5px; /* Agrega un poco de padding */
     overflow-wrap: break-word; /* Permite que las palabras largas se rompan */
-    max-width: 90%; /* Limita el ancho para que no se salga */
   }
 }
