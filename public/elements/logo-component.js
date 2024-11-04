@@ -26,7 +26,7 @@ class LogoComponent extends SioElement {
         }
 
         .container {
-            display: flex; /* Usamos flexbox para disposición horizontal */
+            display: flex;
             align-items: center; /* Centra verticalmente */
             background-color: #d0d0d0; /* Color gris más oscuro */
             padding: 20px; /* Espaciado interno */
@@ -51,6 +51,19 @@ class LogoComponent extends SioElement {
 
         p {
             margin: 0; /* Sin margen para mantenerlo alineado */
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Cambia la dirección a columna en móvil */
+                align-items: center; /* Centra elementos horizontalmente */
+            }
+
+            .image-wrapper {
+                margin-right: 0; /* Elimina el margen en móvil */
+                margin-bottom: 10px; /* Margen inferior para separación */
+            }
         }
     `;
 
