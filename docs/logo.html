@@ -64,6 +64,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
         width: 100%; /* Asegura que ocupe el 100% del contenedor */
         box-sizing: border-box; /* Incluye el padding en el ancho */
+        overflow: hidden; /* Evita que el contenido interno cause scroll */
     }
 
     .color-swatch {
@@ -71,12 +72,14 @@
         height: 150px; /* Alto del recuadro de color */
         border-radius: 8px; /* Bordes redondeados */
         margin-right: 1em; /* Espacio entre color y texto */
+        flex-shrink: 0; /* Evita que se reduzca el tamaño en flex */
     }
 
     .color-info {
         display: flex;
         flex-direction: column;
         justify-content: center; /* Centrar contenido verticalmente */
+        flex-grow: 1; /* Permite que ocupe el espacio restante */
     }
 
     /* Estilos responsivos */
@@ -102,6 +105,7 @@
             flex-direction: column; /* Disposición vertical en móvil */
             align-items: center; /* Centrar contenido */
             width: 100%; /* Ancho completo en móviles */
+            padding: 1em; /* Padding interno ajustado */
         }
 
         .color-swatch {
@@ -110,6 +114,7 @@
         }
     }
 </style>
+
 
 
 
