@@ -11,7 +11,7 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-   /* Estilos del menú lateral */
+ /* Estilos del menú lateral */
 .sidebar {
     position: fixed;
     top: 0;
@@ -61,7 +61,6 @@ body {
     overflow-y: auto; /* Permite scroll en el contenido si es necesario */
 }
 
-
 /* Aquí aseguramos que los recuadros ocupen el 100% de la pantalla en móvil */
 .color-box {
     display: flex; /* Usar flexbox para disposición horizontal */
@@ -84,8 +83,8 @@ body {
 
     body {
         margin: 0; /* Sin margen para el menú en móvil */
-        height: auto; /* Altura automática en móvil */
-        overflow-y: auto; /* Permite scroll vertical en móvil si es necesario */
+        overflow-x: hidden; /* Eliminar el scroll horizontal solo en móvil */
+        overflow-y: auto; /* Permitir scroll vertical */
     }
 
     .color-section {
@@ -93,6 +92,7 @@ body {
         padding: 0.5em; /* Reducir padding en móvil */
         max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
         height: auto; /* Altura automática en móvil */
+        overflow-y: auto; /* Permite scroll vertical */
     }
 
     /* Ajustar el tamaño de las cajas de color en móviles */
@@ -123,12 +123,11 @@ body {
     .logo-component {
         width: 100%; /* Ocupa todo el ancho en móvil */
         margin: 0; /* Sin margen */
-        padding: 0.5em; /* Padding interno para separación */
+        padding: 0.5em; /* Padding interno ajustado */
         margin-left: 0; /* Asegura que no haya margen a la izquierda */
     }
 }
-
-    </style>
+</style>
     
 </head>
 <body class="logo-page">
