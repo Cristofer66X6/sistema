@@ -18,8 +18,8 @@
         left: 0;
         width: 200px;
         height: 100%;
-        background-color:  #ffc629; /* Color de fondo del menú */
-        color:black; /* Color del texto */
+        background-color: #ffc629; /* Color de fondo del menú */
+        color: black; /* Color del texto */
         padding: 20px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
         z-index: 1000; /* Asegura que el menú esté por encima del contenido */
@@ -27,7 +27,7 @@
 
     .sidebar a {
         display: block;
-        color:black;
+        color: black;
         text-decoration: none;
         padding: 10px;
         margin: 5px 0;
@@ -42,6 +42,7 @@
 
     body {
         margin-left: 220px; /* Deja espacio para el menú */
+        transition: margin-left 0.3s; /* Transición suave para el margen */
     }
 
     .color-section {
@@ -71,7 +72,35 @@
         justify-content: center; /* Centrar contenido verticalmente */
     }
 
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%; /* Menú ocupa todo el ancho en móvil */
+            position: relative; /* Cambiar a relativo para no superponerse */
+            height: auto; /* Altura automática */
+            box-shadow: none; /* Quitar sombra */
+        }
+
+        body {
+            margin-left: 0; /* Sin margen para el menú en móvil */
+        }
+
+        .color-section {
+            padding: 0.5em; /* Reducir padding en móvil */
+        }
+
+        .color-box {
+            flex-direction: column; /* Disposición vertical en móvil */
+            align-items: center; /* Centrar contenido */
+        }
+
+        .color-swatch {
+            margin-right: 0; /* Sin margen a la derecha en móvil */
+            margin-bottom: 1em; /* Margen inferior para separación */
+        }
+    }
 </style>
+
 </head>
 <body class="logo-page">
   <div class="sidebar">

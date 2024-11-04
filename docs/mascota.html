@@ -24,7 +24,7 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
             z-index: 1000; /* Asegura que el menú esté por encima del contenido */
         }
-
+    
         .sidebar a {
             display: block;
             color: black;
@@ -34,44 +34,73 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
+    
         .sidebar a:hover {
             background-color: #151d33; /* Color al pasar el mouse */
             color: white; /* Cambia el color del texto al pasar el mouse */
         }
-
+    
         body {
             margin-left: 220px; /* Deja espacio para el menú */
+            transition: margin-left 0.3s; /* Transición suave para el margen */
         }
-
+    
         .color-section {
             display: flex;
             flex-direction: column;
             gap: 1.5em; /* Espacio entre los recuadros */
             padding: 1em;
         }
-
+    
         .color-box {
             display: flex; /* Usar flexbox para disposición horizontal */
             padding: 1em;
             border-radius: 8px; /* Bordes redondeados */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
         }
-
+    
         .color-swatch {
             width: 150px; /* Ancho del recuadro de color */
             height: 150px; /* Alto del recuadro de color */
             border-radius: 8px; /* Bordes redondeados */
             margin-right: 1em; /* Espacio entre color y texto */
         }
-
+    
         .color-info {
             display: flex;
             flex-direction: column;
             justify-content: center; /* Centrar contenido verticalmente */
         }
-
+    
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%; /* Menú ocupa todo el ancho en móvil */
+                position: relative; /* Cambiar a relativo para no superponerse */
+                height: auto; /* Altura automática */
+                box-shadow: none; /* Quitar sombra */
+            }
+    
+            body {
+                margin-left: 0; /* Sin margen para el menú en móvil */
+            }
+    
+            .color-section {
+                padding: 0.5em; /* Reducir padding en móvil */
+            }
+    
+            .color-box {
+                flex-direction: column; /* Disposición vertical en móvil */
+                align-items: center; /* Centrar contenido */
+            }
+    
+            .color-swatch {
+                margin-right: 0; /* Sin margen a la derecha en móvil */
+                margin-bottom: 1em; /* Margen inferior para separación */
+            }
+        }
     </style>
+    
 </head>
 <body class="logo-page">
     <div class="sidebar">

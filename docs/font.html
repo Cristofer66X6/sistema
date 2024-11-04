@@ -42,6 +42,7 @@
 
     body {
         margin-left: 220px; /* Deja espacio para el menú */
+        transition: margin-left 0.3s; /* Transición suave para el margen */
     }
 
     .font-section {
@@ -63,7 +64,37 @@
     .font-box {
         width: 50%; /* Ancho del recuadro de fuente */
     }
-  </style>
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%; /* Menú ocupa todo el ancho en móvil */
+            position: relative; /* Cambiar a relativo para no superponerse */
+            height: auto; /* Altura automática */
+            box-shadow: none; /* Quitar sombra */
+        }
+
+        body {
+            margin-left: 0; /* Sin margen para el menú en móvil */
+        }
+
+        .font-section {
+            padding: 0.5em; /* Reducir padding en móvil */
+        }
+
+        .font-info-container {
+            flex-direction: column; /* Disposición vertical en móvil */
+            align-items: center; /* Centrar contenido */
+        }
+
+        .info-box,
+        .font-box {
+            width: 100%; /* Cada caja ocupa el 100% en móvil */
+            margin-bottom: 1em; /* Margen inferior para separación */
+        }
+    }
+</style>
+
 </head>
 <body class="font-page">
   <div class="sidebar">
