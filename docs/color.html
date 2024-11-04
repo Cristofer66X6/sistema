@@ -20,6 +20,7 @@
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
             z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+            transition: width 0.3s; /* Transición suave en el ancho */
         }
 
         .sidebar a {
@@ -39,6 +40,17 @@
 
         body {
             margin-left: 220px; /* Deja espacio para el menú */
+            font-family: 'Montserrat', sans-serif; /* Aplicar fuente */
+        }
+
+        .hello-container {
+            padding: 1em;
+        }
+
+        .hello-world {
+            font-size: 4em; /* Aumenta el tamaño de la fuente */
+            font-weight: 700; /* Hace el texto más negrita */
+            margin: 0; /* Elimina márgenes por defecto */
         }
 
         .color-section {
@@ -53,6 +65,7 @@
             padding: 1em;
             border-radius: 8px; /* Bordes redondeados */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            flex-wrap: wrap; /* Permite que los elementos se ajusten */
         }
 
         .color-swatch {
@@ -68,12 +81,34 @@
             justify-content: center; /* Centrar contenido verticalmente */
         }
 
-        /* Nuevo estilo para aumentar el tamaño del texto "Colores" */
-        hello-world {
-            font-size: 4em; /* Aumenta el tamaño de la fuente */
-            font-weight: 700; /* Hace el texto más negrita */
-            margin: 0; /* Elimina márgenes por defecto */
-            flex: 0 1 auto; /* Permite que el texto ocupe solo el espacio necesario */
+        /* Responsivo */
+        @media (max-width: 768px) {
+            body {
+                margin-left: 0; /* Eliminar margen izquierdo en móviles */
+            }
+
+            .sidebar {
+                width: 100px; /* Reducir ancho en móviles */
+                margin-left: -100px; /* Mover fuera de vista */
+            }
+
+            .sidebar:hover {
+                margin-left: 0; /* Mostrar menú al pasar el mouse */
+            }
+
+            .color-box {
+                flex-direction: column; /* Cambiar a disposición vertical en móviles */
+                align-items: center; /* Centrar los elementos */
+                text-align: center; /* Centrar texto */
+            }
+
+            .color-swatch {
+                margin: 0 0 1em 0; /* Espacio entre el recuadro y el texto */
+            }
+
+            .hello-world {
+                font-size: 3em; /* Reducir tamaño de fuente en móviles */
+            }
         }
     </style>
 </head>

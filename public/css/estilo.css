@@ -7,73 +7,68 @@
 /* Estilos básicos */
 body {
   background-image: url(/PNG/PNG/fondo.jpg);
-  background-size: cover; /* Asegura que la imagen cubra toda el área */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: fixed; /* Fija la imagen de fondo al desplazarse */
-  background-position: center; /* Centra la imagen de fondo */
-  font-family: 'Montserrat', sans-serif; /* Cambiado a Montserrat */
-  background-color: #f5f5f5; /* Color de fondo de respaldo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
-
 .hello-container {
-  display: flex; /* Usar flexbox para disposición horizontal */
-  align-items: center; /* Alinea verticalmente el texto y la imagen */
-  padding: 0; /* Elimina el espaciado alrededor del contenedor */
-  margin: 0; /* Elimina márgenes del contenedor */
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 hello-world {
-  margin: 0; /* Elimina márgenes por defecto */
-  flex: 0 1 auto; /* Permite que el texto ocupe solo el espacio necesario */
+  margin: 0;
+  flex: 0 1 auto;
 }
 
 .hello-image {
-  width: 150px; /* Ajusta el tamaño según sea necesario */
-  height: auto; /* Mantiene la relación de aspecto */
-  max-height: 200px; /* Asegura que la imagen no exceda esta altura */
-  margin-left: 30px; /* Espacio entre el texto y la imagen */
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  margin-left: 30px;
 }
 
 /* Estilos del header */
 header {
-  background-color: #151d33; /* Color de fondo amarillo */
+  background-color: #151d33;
   color: white;
   padding: 50px;
-  margin: 0px;
+  margin: 0;
   text-align: center;
   box-sizing: border-box;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Sombreado */
-}
-
-
-.logo-page header {
-  background-color: #151d33; /* Cambia a este color solo en logo.html */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Sombreado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
 h1, h2, h3, h4 {
-  text-align: left; /* Centrar el texto */
-  font-weight: bold;  /* Negrita */
-  margin: 20px 0; /* Espaciado vertical */
-  position: relative; /* Necesario para el pseudo-elemento */
+  text-align: left;
+  font-weight: bold;
+  margin: 20px 0;
+  position: relative;
 }
 
 h1 {
-  font-size: 3em; /* Aumentar tamaño de la fuente */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreado para el texto */
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h1::after, h2::after, h3::after, h4::after {
-  content: ""; /* Necesario para mostrar el pseudo-elemento */
+  content: "";
   display: block;
-  width: 90%; /* Ancho reducido a 90% */
-  height: 2px; /* Altura de la línea */
-  background-color: #d3d3d3; /* Color gris claro */
+  width: 90%;
+  height: 2px;
+  background-color: #d3d3d3;
   position: absolute;
-  left: 50%; /* Centrar la línea */
-  transform: translateX(-50%); /* Ajustar para que esté centrada */
-  bottom: -10px; /* Espacio entre el encabezado y la línea */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
 }
 
 .components {
@@ -81,96 +76,89 @@ h1::after, h2::after, h3::after, h4::after {
 }
 
 #logo {
-  color: white; /* Texto blanco */
+  color: white;
 }
 
-/* Estilo para el enlace */
 .component {
-  display: flex; /* Usar flexbox para alinear los botones en fila */
-  justify-content: center; /* Centra los botones dentro del contenedor */
-  flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas si es necesario */
-  padding: 10px; /* Espaciado interno del contenedor */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 .btn-primary {
-  display: inline-block; /* Asegura que los botones se muestren en línea */
-  padding: 80px 100px; /* Espaciado interno aumentado para hacerlo más grande */
-  background-color: #ffc629; /* Color de fondo deseado */
-  color: #151d33; /* Color del texto */
-  text-decoration: none; /* Sin subrayado */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombreado */
-  transition: background-color 0.3s ease; /* Transición suave para el hover */
-  margin: 15px; /* Espaciado entre botones */
-  font-size: 24px; /* Tamaño de fuente aumentado */
+  display: inline-block;
+  padding: 80px 100px;
+  background-color: #ffc629;
+  color: #151d33;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  margin: 15px;
+  font-size: 24px;
   font-weight: bold;
 }
 
-
-
-
-.btn-primary, .btn-primary2 {
-  margin-top: 100px; 
-}
-
 .btn-primary:hover {
-  background-color: #d8a62e; /* Color al pasar el mouse (ajustable) */
+  background-color: #d8a62e;
 }
 
 .btn-primary2 {
   padding: 20px 40px;
   background-color: #ffc629;
-  color: white; /* Color del texto */
-  text-decoration: none; /* Sin subrayado */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombreado */
-  transition: background-color 0.3s ease; /* Transición suave para el hover */
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
 }
 
 .download-button {
-  display: block; /* Hace que el botón ocupe todo el ancho posible */
-  width: 100%; /* Asegura que el botón esté alineado */
-  max-width: 200px; /* Ancho máximo del botón */
-  padding: 8px 12px; /* Espaciado interno */
-  background-color: rgba(0, 128, 0, 0.7); /* Color verde opaco */
-  color: white; /* Color del texto */
-  text-decoration: none; /* Sin subrayado */
-  border-radius: 5px; /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  margin: 10px auto 0; /* Espaciado superior y centrado */
-  border: none; /* Sin borde */
-  cursor: pointer; /* Cambiar cursor a puntero */
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  padding: 8px 12px;
+  background-color: rgba(0, 128, 0, 0.7);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 10px auto 0;
+  border: none;
+  cursor: pointer;
 }
 
 .download-button:hover {
-  background-color: rgba(0, 128, 0, 0.9); /* Color al pasar el mouse */
+  background-color: rgba(0, 128, 0, 0.9);
 }
 
 .container {
-  background-color: #f0f0f0; /* Color gris claro */
-  padding: 10px; /* Espaciado interno reducido */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  width: 45%; /* Cada contenedor ocupa el 45% del ancho */
-  max-width: 300px; /* Ancho máximo para evitar que se extienda demasiado */
-  text-align: center; /* Alinear texto al centro */
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  max-width: 300px;
+  text-align: center;
 }
 
 .wrapper {
-  display: flex; /* Usamos flexbox para disposición horizontal */
-  justify-content: space-between; /* Espaciado entre elementos */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permitir que los elementos se ajusten */
 }
 
 .font-section {
   display: flex;
-  flex-wrap: wrap; /* Permitir que los elementos se ajusten */
-  justify-content: space-around; /* Espaciado entre elementos */
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 1em;
-  margin-left: 220px; /* Ajuste para evitar superposición con el menú */
+  margin-left: 0; /* Sin margen en pantallas pequeñas */
 }
 
 .font-box, .info-box {
-  width: 45%; /* Ajusta el ancho según sea necesario */
+  width: 45%;
   margin: 1em;
   padding: 1em;
   border-radius: 8px;
@@ -178,35 +166,35 @@ h1::after, h2::after, h3::after, h4::after {
 }
 
 .info-box {
-  background-color: #f9f9f9; /* Fondo diferente para la información */
+  background-color: #f9f9f9;
 }
 
 .font-box {
-  background-color: #f0f0f0; /* Color de fondo gris */
+  background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrar contenido verticalmente */
-  align-items: center; /* Centrar contenido horizontalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 .font-box h2 {
-  font-weight: normal; /* Para mantener el peso de fuente normal */
+  font-weight: normal;
 }
 
 .esmi-description {
-  background-color: #f0f0f0; /* Color de fondo gris claro */
-  color: #333; /* Color del texto */
-  padding: 15px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
-  text-align: center; /* Centrar el texto */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  margin: 10px auto; /* Margen superior e inferior, auto para centrar */
-  max-width: 800px; /* Ancho máximo del párrafo */
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  max-width: 800px;
 }
 
 .title {
-  font-weight: bold; /* Negrita para el título */
-  color: #202070; /* Color del título */
+  font-weight: bold;
+  color: #202070;
 }
 
 /* Estilos para el menú lateral */
@@ -214,13 +202,13 @@ h1::after, h2::after, h3::after, h4::after {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px; /* Ancho del menú */
+  width: 200px;
   height: 100%;
-  background-color: #202070; /* Color del menú */
+  background-color: #202070;
   color: white;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Asegúrate de que esté encima del contenido */
+  z-index: 1000;
 }
 
 .sidebar h2 {
@@ -231,8 +219,8 @@ h1::after, h2::after, h3::after, h4::after {
   display: block;
   color: white;
   text-decoration: none;
-  margin: 5px 0; /* Margen reducido */
-  padding: 8px; /* Espaciado interno reducido */
+  margin: 5px 0;
+  padding: 8px;
 }
 
 .sidebar a:hover {
@@ -241,18 +229,55 @@ h1::after, h2::after, h3::after, h4::after {
 
 /* Ajuste del cuerpo para logo.html */
 body.logo-page {
-  margin-left: 220px; /* Deja espacio para el menú */
-  padding-left: 20px; /* Espacio adicional para el contenido */
+  margin-left: 220px;
+  padding-left: 20px;
 }
 
 .logo-page section {
-  padding: 20px; /* Espacio alrededor del contenido principal */
+  padding: 20px;
 }
 
 image-downloader {
   display: flex;
-  flex-direction: column; /* Para apilar los elementos verticalmente */
-  align-items: center; /* Centrar horizontalmente */
-  margin-top: 1em; /* Espacio entre la imagen y el downloader */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
 }
 
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .hello-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hello-image {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  body {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .btn-primary, .btn-primary2 {
+    padding: 20px 40px;
+    font-size: 18px;
+  }
+
+  .color-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .color-swatch {
+    width: 100%;
+    height: auto;
+  }
+}
