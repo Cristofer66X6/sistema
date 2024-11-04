@@ -20,7 +20,8 @@
     height: 100%;
     background-color: #ffc629; /* Color de fondo del menú */
     color: black; /* Color del texto */
-    padding: 20px;
+    padding: 0; /* Eliminar padding */
+    margin: 0; /* Eliminar margen */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
     z-index: 1000; /* Asegura que el menú esté por encima del contenido */
     box-sizing: border-box; /* Incluye el padding en el ancho */
@@ -43,10 +44,11 @@
 
 body {
     margin: 0; /* Sin margen en el cuerpo */
+    padding: 0; /* Eliminar padding */
     overflow-x: hidden; /* Evitar scroll horizontal */
     overflow-y: auto; /* Permitir scroll vertical */
     font-family: Arial, sans-serif; /* Fuente base */
-    height: auto; /* Altura automática para permitir scroll */
+    height: 100%; /* Altura al 100% */
 }
 
 .color-section {
@@ -57,7 +59,6 @@ body {
     margin-left: 220px; /* Deja espacio para el menú lateral */
     max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
     box-sizing: border-box; /* Incluye el padding en el ancho */
-    /* No fijes la altura aquí para permitir el scroll */
     overflow-y: auto; /* Permite scroll en el contenido si es necesario */
 }
 
@@ -79,17 +80,20 @@ body {
         position: relative; /* Cambiar a relativo para no superponerse */
         height: auto; /* Altura automática */
         box-shadow: none; /* Quitar sombra */
+        padding: 0; /* Eliminar padding */
+        margin: 0; /* Eliminar margen */
     }
 
     body {
-        margin: 0; /* Sin margen para el menú en móvil */
-        overflow-x: hidden; /* Eliminar el scroll horizontal solo en móvil */
+        margin: 0; /* Sin margen */
+        padding: 0; /* Sin padding */
+        overflow-x: hidden; /* Eliminar el scroll horizontal */
         overflow-y: auto; /* Permitir scroll vertical */
     }
 
     .color-section {
         margin-left: 0; /* Sin margen para el menú en móvil */
-        padding: 0.5em; /* Reducir padding en móvil */
+        padding: 0; /* Eliminar padding para evitar desbordamiento */
         max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
         height: auto; /* Altura automática en móvil */
         overflow-y: auto; /* Permite scroll vertical */
@@ -100,7 +104,7 @@ body {
         flex-direction: column; /* Disposición vertical en móvil */
         align-items: center; /* Centrar contenido */
         width: 100%; /* Ancho completo en móviles */
-        padding: 1em; /* Padding interno ajustado */
+        padding: 0.5em; /* Ajustar padding para evitar desbordamiento */
         margin: 0; /* Eliminar margen */
     }
 
@@ -123,10 +127,11 @@ body {
     .logo-component {
         width: 100%; /* Ocupa todo el ancho en móvil */
         margin: 0; /* Sin margen */
-        padding: 0.5em; /* Padding interno ajustado */
+        padding: 0.5em; /* Ajuste del padding */
         margin-left: 0; /* Asegura que no haya margen a la izquierda */
     }
 }
+
 </style>
     
 </head>
