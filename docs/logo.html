@@ -80,7 +80,10 @@
         flex-direction: column;
         justify-content: center; /* Centrar contenido verticalmente */
         flex-grow: 1; /* Permite que ocupe el espacio restante */
-        overflow-wrap: break-word; /* Asegura que el texto largo se divida */
+        overflow: hidden; /* Oculta el contenido que se desborda */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
+        white-space: nowrap; /* Mantiene el texto en una sola línea */
+        max-width: calc(100% - 150px); /* Ajusta el ancho para incluir el color swatch */
     }
 
     /* Estilos responsivos */
@@ -113,11 +116,12 @@
             margin-right: 0; /* Sin margen a la derecha en móvil */
             margin-bottom: 1em; /* Margen inferior para separación */
         }
+
+        .color-info {
+            white-space: normal; /* Permite que el texto se divida en múltiples líneas en móvil */
+        }
     }
 </style>
-
-
-
 
 
 </head>
