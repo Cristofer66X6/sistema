@@ -240,7 +240,7 @@ body.logo-page {
   padding: 20px;
 }
 
-image-downloader {
+.image-downloader {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -300,30 +300,11 @@ image-downloader {
   .sidebar {
     width: 100%; /* Menú de ancho completo en móviles */
     position: relative; /* Cambiar a posición relativa */
-    height: auto; /* Ajuste de altura */
+    height: auto; /* Altura automática */
   }
 
   body.logo-page {
-    margin-left: 0; /* Eliminar margen izquierdo */
-    padding: 10px; /* Espaciado reducido */
-  }
-
-  /* Ajustes para logo-component */
-  logo-component {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el contenido */
-    text-align: center; /* Centra el texto */
-    max-width: 100%; /* Asegura que no se salga del contenedor */
-    margin: 10px 0; /* Espaciado entre los componentes */
-    word-wrap: break-word; /* Permite que las palabras largas se rompan */
-  }
-
-  .logo-description {
-    font-size: 0.9em; /* Disminuir el tamaño de la fuente en móviles */
-    line-height: 1.2; /* Espaciado entre líneas */
-    padding: 5px; /* Agrega un poco de padding */
-    overflow-wrap: break-word; /* Permite que las palabras largas se rompan */
-    max-width: 90%; /* Limita el ancho para que no se salga */
+    margin-left: 0; /* Eliminar margen para móvil */
+    padding-left: 0; /* Eliminar padding para móvil */
   }
 }
