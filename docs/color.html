@@ -20,6 +20,7 @@
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
             z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+            box-sizing: border-box; /* Incluye el padding en el ancho */
         }
     
         .sidebar a {
@@ -40,6 +41,7 @@
         body {
             margin-left: 220px; /* Deja espacio para el menú */
             transition: margin-left 0.3s; /* Transición suave para el margen */
+            overflow-x: hidden; /* Evitar scroll horizontal */
         }
     
         .color-section {
@@ -47,6 +49,8 @@
             flex-direction: column;
             gap: 1.5em; /* Espacio entre los recuadros */
             padding: 1em;
+            max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
+            box-sizing: border-box; /* Incluye el padding en el ancho */
         }
     
         .color-box {
@@ -54,6 +58,7 @@
             padding: 1em;
             border-radius: 8px; /* Bordes redondeados */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            overflow: hidden; /* Evita que el contenido interno cause scroll */
         }
     
         .color-swatch {
@@ -61,6 +66,7 @@
             height: 150px; /* Alto del recuadro de color */
             border-radius: 8px; /* Bordes redondeados */
             margin-right: 1em; /* Espacio entre color y texto */
+            flex-shrink: 0; /* Evita que se reduzca el tamaño en flex */
         }
     
         .color-info {
@@ -92,11 +98,13 @@
     
             .color-section {
                 padding: 0.5em; /* Reducir padding en móvil */
+                max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
             }
     
             .color-box {
                 flex-direction: column; /* Disposición vertical en móvil */
                 align-items: center; /* Centrar contenido */
+                width: 100%; /* Ancho completo en móviles */
             }
     
             .color-swatch {
@@ -109,6 +117,7 @@
             }
         }
     </style>
+    
     
 </head>
 <body>

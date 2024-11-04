@@ -23,6 +23,7 @@
         padding: 20px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
         z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
     .sidebar a {
@@ -43,6 +44,7 @@
     body {
         margin-left: 220px; /* Deja espacio para el menú */
         transition: margin-left 0.3s; /* Transición suave para el margen */
+        overflow-x: hidden; /* Evitar scroll horizontal */
     }
 
     .font-section {
@@ -50,19 +52,25 @@
         flex-direction: column;
         gap: 2em; /* Espacio entre las secciones de fuentes */
         padding: 1em;
+        max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
     .font-info-container {
         display: flex; /* Usar flexbox para disposición horizontal */
         justify-content: space-between; /* Separar elementos a los extremos */
+        width: 100%; /* Asegura que ocupe el ancho completo */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
     .info-box {
         width: 50%; /* Ancho del recuadro de información */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
     .font-box {
         width: 50%; /* Ancho del recuadro de fuente */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
     /* Estilos responsivos */
@@ -80,11 +88,13 @@
 
         .font-section {
             padding: 0.5em; /* Reducir padding en móvil */
+            max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
         }
 
         .font-info-container {
             flex-direction: column; /* Disposición vertical en móvil */
             align-items: center; /* Centrar contenido */
+            width: 100%; /* Asegura que ocupe el ancho completo */
         }
 
         .info-box,
@@ -94,6 +104,7 @@
         }
     }
 </style>
+
 
 </head>
 <body class="font-page">
