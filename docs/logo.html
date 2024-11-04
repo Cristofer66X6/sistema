@@ -118,8 +118,14 @@
         }
 
         .color-info {
-            white-space: normal; /* Permite que el texto se divida en múltiples líneas en móvil */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrar contenido verticalmente */
+            flex-grow: 1; /* Permite que ocupe el espacio restante */
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            word-break: break-word; /* Permite que las palabras largas se dividan en varias líneas */
         }
+        
     }
 </style>
 
