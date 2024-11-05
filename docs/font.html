@@ -56,16 +56,25 @@
         box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
+    /* Contenedor de la información de las fuentes con fondo gris claro */
     .font-info-container {
         display: flex; /* Usar flexbox para disposición horizontal */
         justify-content: space-between; /* Separar elementos a los extremos */
         width: 100%; /* Asegura que ocupe el ancho completo */
         box-sizing: border-box; /* Incluye el padding en el ancho */
+        background-color: #f2f2f2; /* Fondo gris claro */
+        padding: 15px; /* Relleno para separar el contenido del borde */
+        border-radius: 8px; /* Bordes redondeados */
+        margin-bottom: 20px; /* Separación entre los contenedores */
     }
 
+    /* Caja de información con fondo gris claro */
     .info-box {
         width: 50%; /* Ancho del recuadro de información */
         box-sizing: border-box; /* Incluye el padding en el ancho */
+        background-color: #f9f9f9; /* Fondo gris más claro para la caja de información */
+        padding: 15px;
+        border-radius: 8px;
     }
 
     .font-box {
@@ -103,9 +112,7 @@
             margin-bottom: 1em; /* Margen inferior para separación */
         }
     }
-</style>
-
-
+  </style>
 </head>
 <body class="font-page">
   <div class="sidebar">
@@ -138,7 +145,6 @@
       </div>
     </div>
 
-    <!-- Repite el mismo patrón para cada tipo de letra -->
     <div class="font-info-container">
       <div class="font-box">
         <h2 class="font-montserrat-regular">Montserrat - Regular</h2>
@@ -204,18 +210,6 @@
       </div>
     </div>
 
-    <div class="font-info-container">
-      <div class="font-box">
-        <h2 class="font-bernadette">Bernadette</h2>
-        <p class="font-bernadette">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
-        abcdñefghijklmnopqrstuvwxyza<br>
-        1234567890</p>
-      </div>
-      <div class="info-box">
-        <h3>Información</h3>
-        <p>SE UTILIZA PARA SLOGANS, Bernadette es una tipografía con un toque artístico, ideal para proyectos que buscan un enfoque más personalizado y creativo.</p>
-      </div>
-    </div>
   </section>
 
   <footer>
