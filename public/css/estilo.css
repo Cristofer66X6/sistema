@@ -235,6 +235,14 @@ h1::after, h2::after, h3::after, h4::after {
   text-decoration: underline;
 }
 
+.logo-page {
+  padding: 0.5em; /* Reducir padding en móvil */
+  max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+  flex-direction: column; /* Disposición vertical en móvil */
+  align-items: center; /* Centrar contenido */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+  margin-left: 180px;
+}
 
 
 image-downloader {
