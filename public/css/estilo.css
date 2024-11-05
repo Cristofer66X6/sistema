@@ -6,12 +6,7 @@
 
 /* Estilos básicos */
 body {
- 
-  margin: 0; /* Eliminar márgenes */
-  padding: 0; /* Eliminar padding */
-  overflow-x: hidden; /* Eliminar scroll horizontal */
-  height: 100vh; /* Altura total para evitar scroll */
-  box-sizing: border-box; /* Asegura que el padding se incluya en el cálculo de la altura y el ancho */
+  
   background-image: url(/PNG/PNG/fondo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -48,6 +43,7 @@ header {
   padding: 50px;
   margin: 0;
   text-align: center;
+  box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
@@ -232,22 +228,17 @@ h1::after, h2::after, h3::after, h4::after {
   text-decoration: underline;
 }
 
+/* Ajuste del cuerpo para logo.html */
+body.logo-page {
+  margin-left: 180px;
+  padding-left: 20px;
+}
+
 .logo-page section {
   padding: 20px;
 }
 
-
-body.logo-page {
-  padding: 0.5em; /* Reducir padding en móvil */
-  max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-  flex-direction: column; /* Disposición vertical en móvil */
-  align-items: center; /* Centrar contenido */
-  width: 100%; /* Asegura que ocupe el ancho completo */
-  margin-left: 180px;
-  padding-left: 0px;
-}
-
-image-downloader {
+.image-downloader {
   display: flex;
   flex-direction: column;
   align-items: center;
