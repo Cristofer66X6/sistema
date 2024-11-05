@@ -20,12 +20,12 @@ class LogoComponent extends SioElement {
     }
 
     static styles = `
-        :host {
-            display: block;
-            margin: 20px 0;
-        }
+ :host {
+    display: block;
+    margin: 20px 0;
+}
 
-        /* Estilos generales del container */
+/* Estilos generales del container */
 .container {
     display: flex;
     align-items: center; /* Centra verticalmente */
@@ -45,38 +45,45 @@ class LogoComponent extends SioElement {
         margin-left: 0; /* Elimina el margen izquierdo */
         margin-right: 0; /* Elimina el margen derecho */
         padding: 10px; /* Ajusta el padding para mejorar el diseño en móvil */
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    }
+    
+    /* Si quieres que el fondo gris cubra todo el ancho incluso cuando hay espaciado o márgenes */
+    body {
+        margin: 0; /* Elimina márgenes del body en móvil */
     }
 }
 
+/* Estilos para la imagen y su contenedor */
+.image-wrapper {
+    background-color: #fff; /* Fondo blanco para la imagen */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-right: 20px; /* Espaciado entre imagen y descripción */
+}
 
-        .image-wrapper {
-            background-color: #fff; /* Fondo blanco para la imagen */
-            padding: 10px; /* Espaciado interno */
-            border-radius: 8px; /* Bordes redondeados */
-            margin-right: 20px; /* Espaciado entre imagen y descripción */
-        }
+img {
+    max-width: 200px; /* Aumenta el tamaño de la imagen */
+    height: auto;
+}
 
-        img {
-            max-width: 200px; /* Aumenta el tamaño de la imagen */
-            height: auto;
-        }
+p {
+    margin: 0; /* Sin margen para mantenerlo alineado */
+}
 
-        p {
-            margin: 0; /* Sin margen para mantenerlo alineado */
-        }
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Cambia la dirección a columna en móvil */
+        align-items: center; /* Centra elementos horizontalmente */
+    }
 
-        /* Estilos responsivos */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Cambia la dirección a columna en móvil */
-                align-items: center; /* Centra elementos horizontalmente */
-            }
+    .image-wrapper {
+        margin-right: 0; /* Elimina el margen en móvil */
+        margin-bottom: 10px; /* Margen inferior para separación */
+    }
+}
 
-            .image-wrapper {
-                margin-right: 0; /* Elimina el margen en móvil */
-                margin-bottom: 10px; /* Margen inferior para separación */
-            }
-        }
     `;
 
     render() {
