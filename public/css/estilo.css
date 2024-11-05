@@ -143,7 +143,7 @@ h1::after, h2::after, h3::after, h4::after {
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  max-width: none; /* Elimina la restricción de max-width */
+  max-width: 100%; /* Elimina cualquier restricción de ancho */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
@@ -160,7 +160,7 @@ h1::after, h2::after, h3::after, h4::after {
     padding: 10px; /* Ajusta el padding para mejorar el diseño en móvil */
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
   }
-  
+
   /* Si tienes algún contenedor padre que pueda estar afectando, puedes añadir este estilo */
   .component, .font-section, .image-wrapper {
     width: 100%; /* Asegura que los elementos hijos también ocupen todo el ancho */
@@ -240,23 +240,24 @@ h1::after, h2::after, h3::after, h4::after {
   background-color: #fff; /* Fondo blanco para la imagen */
   padding: 10px; /* Espaciado interno */
   border-radius: 8px; /* Bordes redondeados */
-  margin-right: 20px; /* Espaciado entre imagen y descripción */
+  margin-right: 0; /* Eliminar margen para evitar desbordamiento */
+  width: 100%; /* Asegura que la imagen no desborde */
 }
 
 img {
-  max-width: 200px; /* Aumenta el tamaño de la imagen */
+  max-width: 100%; /* Garantiza que la imagen no se desborde */
   height: auto;
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
   .container {
-      flex-direction: column; /* Cambia la dirección a columna en móvil */
-      align-items: center; /* Centra elementos horizontalmente */
+    flex-direction: column; /* Cambia la dirección a columna en móvil */
+    align-items: center; /* Centra elementos horizontalmente */
   }
 
   .image-wrapper {
-      margin-right: 0; /* Elimina el margen en móvil */
-      margin-bottom: 10px; /* Margen inferior para separación */
+    margin-right: 0; /* Elimina el margen en móvil */
+    margin-bottom: 10px; /* Margen inferior para separación */
   }
 }
