@@ -11,78 +11,170 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-  /* Estilos del menú lateral */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #ffc629; /* Color de fondo del menú */
-    color: black; /* Color del texto */
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
-    z-index: 1000; /* Asegura que el menú esté por encima del contenido */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
-}
-
-.sidebar a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #151d33; /* Color al pasar el mouse */
-    color: white; /* Cambia el color del texto al pasar el mouse */
+/* Asegurando que todos los elementos tengan el box-sizing correcto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Asegura que el padding y el border no se sumen al ancho total */
 }
 
 body {
-    margin-left: 220px; /* Deja espacio para el menú */
-    transition: margin-left 0.3s; /* Transición suave para el margen */
-    overflow-x: hidden; /* Evitar scroll horizontal */
+  margin-left: 220px; /* Deja espacio para el menú */
+  transition: margin-left 0.3s; /* Transición suave para el margen */
+  overflow-x: hidden; /* Evitar scroll horizontal */
+  padding: 0; /* Quitar márgenes predeterminados */
+  background-color: #fff; /* Fondo blanco */
 }
 
+/* Estilos del menú lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #ffc629; /* Color de fondo del menú */
+  color: black; /* Color del texto */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+  z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #151d33; /* Color al pasar el mouse */
+  color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Sección de tipografía */
 .font-section {
-    display: flex;
-    flex-direction: column;
-    gap: 2em; /* Espacio entre las secciones de fuentes */
-    padding: 1em;
-    max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
+  display: flex;
+  flex-direction: column;
+  gap: 2em; /* Espacio entre las secciones de fuentes */
+  padding: 1em;
+  max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
 }
 
+/* Contenedor de cada fuente y su información */
 .font-info-container {
-    display: flex; /* Usar flexbox para disposición horizontal */
-    justify-content: space-between; /* Separar elementos a los extremos */
-    width: 100%; /* Asegura que ocupe el ancho completo */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se apilen cuando el espacio no sea suficiente */
+  justify-content: space-between; /* Separar elementos a los extremos */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
 }
 
+.font-box,
 .info-box {
-    width: 50%; /* Ancho del recuadro de información */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
+  width: 100%; /* En móvil, cada caja ocupa el 100% del ancho */
+  margin-bottom: 1em; /* Añadir espacio entre las filas */
 }
 
-.font-box {
-    width: 50%; /* Ancho del recuadro de fuente */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
+h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.5em;
 }
 
-/* Estilos responsivos */
+h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.2em;
+}
+
+h4 {
+  margin: 0 0 0.5em 0;
+  font-size: 1em;
+}
+
+/* Para pantallas más grandes, ajustamos los anchos */
+@media (min-width: 768px) {
+  .font-box,
+  .info-box {
+    width: 48%; /* En pantallas grandes, cada caja ocupa 48% del ancho */
+  }
+}
+
 @media (max-width: 768px) {
-    .sidebar {
-        width: 100%; /* Menú ocupa todo el ancho en móvil */
-        position: relative; /* Cambiar a relativo para no superponerse */
-        height: auto; /* Altura automática */
-        box-shadow: none; /* Quitar sombra */
-    }
+  body {
+    margin-left: 0; /* Eliminar el margen en dispositivos móviles */
+  }
 
-    }
+  .font-section {
+    padding: 0.5em; /* Reducir padding en móvil */
+    max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+  }
+
+  .font-info-container {
+    flex-direction: column; /* Disposición vertical en móvil */
+    align-items: center; /* Centrar contenido */
+    width: 100%; /* Asegura que ocupe el ancho completo */
+  }
+
+  .font-box,
+  .info-box {
+    width: 100%; /* En móvil, cada caja ocupa el 100% */
+    margin-bottom: 1em; /* Añadir margen inferior para separación */
+  }
+
+  .font-box p {
+    font-size: 1em; /* Ajustamos el tamaño de la fuente para que sea más legible en móvil */
+  }
+}
+
+/* Estilos para los títulos de las fuentes */
+.font-box h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.font-box p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* Estilo de las imágenes de la página */
+.hello-image {
+  max-width: 100%; /* Asegura que las imágenes no desborden */
+  height: auto;
+}
+
+/* Estilos para los botones en el pie de página */
+footer a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #ffc629;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer a:hover {
+  background-color: #151d33;
+  color: white;
+}
+
+/* Mejora la legibilidad en dispositivos móviles */
+@media (max-width: 600px) {
+  .font-box h2 {
+    font-size: 1.2em;
+  }
+
+  .font-box p {
+    font-size: 1em;
+  }
+}
+
 </style>
     
 </head>
