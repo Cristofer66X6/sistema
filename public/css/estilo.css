@@ -235,15 +235,37 @@ h1::after, h2::after, h3::after, h4::after {
   text-decoration: underline;
 }
 
-.logo-page {
-  padding: 0.5em; /* Reducir padding en móvil */
-  max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-  flex-direction: column; /* Disposición vertical en móvil */
-  align-items: center; /* Centrar contenido */
-  width: 100%; /* Asegura que ocupe el ancho completo */
-  margin-left: 180px;
+/* Estilos generales para la página de logo */
+.logo-page section {
+  padding: 20px; /* Puedes ajustar el padding según sea necesario */
 }
 
+/* Estilos para el body en la página de logo */
+body.logo-page {
+  padding: 0.5em; /* Reducir padding en móvil */
+  max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+  margin: 0; /* Eliminar margen por defecto */
+  padding-left: 0px; /* Elimina el padding izquierdo si lo hay */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  /* Asegura que la sección ocupe todo el ancho en móvil */
+  .logo-page section {
+    padding: 10px; /* Ajuste del padding */
+    width: 100%; /* Ocupa todo el ancho */
+    box-sizing: border-box; /* Asegura que padding se incluya en el ancho total */
+  }
+
+  /* Ajustes adicionales en body para asegurar que ocupe toda la pantalla en móvil */
+  body.logo-page {
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    margin: 0; /* Elimina margen izquierdo/derecho */
+    padding: 0; /* Elimina el padding general */
+  }
+}
 
 image-downloader {
   display: flex;
