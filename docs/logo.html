@@ -15,6 +15,7 @@
 body {
     margin: 0; /* Eliminar márgenes */
     overflow-x: hidden; /* Evitar scroll horizontal */
+    overflow-y: auto; /* Asegurar que el scroll vertical sea controlado */
 }
 
 /* Menú lateral */
@@ -63,6 +64,16 @@ body {
     overflow-x: hidden; /* Asegura que no se desborde horizontalmente */
 }
 
+/* Ajustes a la clase logo-component */
+.logo-component .container {
+    max-width: 100%; /* Cambiar max-width a 100% para evitar desbordamientos */
+}
+
+.logo-component img {
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    height: auto;
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
     /* Menú lateral en móviles */
@@ -93,7 +104,18 @@ body {
         width: 100%; /* Asegura que las cajas ocupen todo el ancho en móviles */
         margin-bottom: 1em; /* Separación entre elementos */
     }
+
+    /* Asegura que las imágenes se ajusten bien en pantallas pequeñas */
+    .logo-component img {
+        max-width: 100%; /* Ajuste para evitar desbordamientos */
+    }
+
+    .logo-component .container {
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho en pantallas pequeñas */
+        margin: 0; /* Elimina márgenes en pantallas pequeñas */
+    }
 }
+
 
 </style>
     
