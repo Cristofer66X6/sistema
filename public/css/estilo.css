@@ -12,8 +12,6 @@ body {
   overflow-x: hidden; /* Eliminar scroll horizontal */
   height: 100vh; /* Altura total para evitar scroll */
   box-sizing: border-box; /* Asegura que el padding se incluya en el cálculo de la altura y el ancho */
-
-
   background-image: url(/PNG/PNG/fondo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,7 +48,6 @@ header {
   padding: 50px;
   margin: 0;
   text-align: center;
-  box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
@@ -235,36 +232,19 @@ h1::after, h2::after, h3::after, h4::after {
   text-decoration: underline;
 }
 
-/* Estilos generales para la página de logo */
 .logo-page section {
-  padding: 20px; /* Puedes ajustar el padding según sea necesario */
+  padding: 20px;
 }
 
-/* Estilos para el body en la página de logo */
+
 body.logo-page {
   padding: 0.5em; /* Reducir padding en móvil */
   max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+  flex-direction: column; /* Disposición vertical en móvil */
+  align-items: center; /* Centrar contenido */
   width: 100%; /* Asegura que ocupe el ancho completo */
-  margin: 0; /* Eliminar margen por defecto */
-  padding-left: 0px; /* Elimina el padding izquierdo si lo hay */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-}
-
-/* Estilos responsivos para móviles */
-@media (max-width: 768px) {
-  /* Asegura que la sección ocupe todo el ancho en móvil */
-  .logo-page section {
-    padding: 10px; /* Ajuste del padding */
-    width: 100%; /* Ocupa todo el ancho */
-    box-sizing: border-box; /* Asegura que padding se incluya en el ancho total */
-  }
-
-  /* Ajustes adicionales en body para asegurar que ocupe toda la pantalla en móvil */
-  body.logo-page {
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    margin: 0; /* Elimina margen izquierdo/derecho */
-    padding: 0; /* Elimina el padding general */
-  }
+  margin-left: 180px;
+  padding-left: 0px;
 }
 
 image-downloader {
@@ -334,7 +314,7 @@ image-downloader {
   }
 
   /* Ajustes para logo-component */
-  logo-component {
+  .logo-component {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra el contenido */
