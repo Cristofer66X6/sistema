@@ -11,98 +11,90 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-  /* Estilos del menú lateral */
+  /* Estilos generales */
+body {
+    margin: 0; /* Eliminar márgenes */
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #ffc629;
+    color: black;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #151d33;
+    color: white;
+}
+
+body {
+    margin-left: 220px; /* Espacio para el menú lateral */
+    transition: margin-left 0.3s;
+}
+
+/* Asegura que el contenido ocupe el espacio restante sin desbordarse */
+.font-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+    max-width: calc(100% - 220px); /* Ajuste para el espacio del menú */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Asegura que no se desborde horizontalmente */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Menú lateral en móviles */
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200px;
-        height: 100%;
-        background-color: #ffc629; /* Color de fondo del menú */
-        color: black; /* Color del texto */
-        padding: 20px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
-        z-index: 1000; /* Asegura que el menú esté por encima del contenido */
-        box-sizing: border-box; /* Incluye el padding en el ancho */
-    }
-
-    .sidebar a {
-        display: block;
-        color: black;
-        text-decoration: none;
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-
-    .sidebar a:hover {
-        background-color: #151d33; /* Color al pasar el mouse */
-        color: white; /* Cambia el color del texto al pasar el mouse */
+        width: 100%; /* Menú ocupa todo el ancho en dispositivos móviles */
+        position: relative; /* Cambiar a relativo para que no se superponga */
+        height: auto;
+        box-shadow: none; /* Eliminar sombra */
     }
 
     body {
-        margin-left: 220px; /* Deja espacio para el menú */
-        transition: margin-left 0.3s; /* Transición suave para el margen */
-        overflow-x: hidden; /* Evitar scroll horizontal */
+        margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
     }
 
+    /* Asegura que el contenido ocupe todo el ancho en dispositivos móviles */
     .font-section {
-        display: flex;
-        flex-direction: column;
-        gap: 2em; /* Espacio entre las secciones de fuentes */
-        padding: 1em;
-        max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
-        box-sizing: border-box; /* Incluye el padding en el ancho */
+        padding: 0.5em;
+        max-width: 100%; /* Eliminar limitación de ancho */
     }
 
     .font-info-container {
-        display: flex; /* Usar flexbox para disposición horizontal */
-        justify-content: space-between; /* Separar elementos a los extremos */
-        width: 100%; /* Asegura que ocupe el ancho completo */
-        box-sizing: border-box; /* Incluye el padding en el ancho */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
-    .info-box {
-        width: 50%; /* Ancho del recuadro de información */
-        box-sizing: border-box; /* Incluye el padding en el ancho */
+    .info-box, .font-box {
+        width: 100%; /* Asegura que las cajas ocupen todo el ancho en móviles */
+        margin-bottom: 1em; /* Separación entre elementos */
     }
+}
 
-    .font-box {
-        width: 50%; /* Ancho del recuadro de fuente */
-        box-sizing: border-box; /* Incluye el padding en el ancho */
-    }
-
-    /* Estilos responsivos */
-    @media (max-width: 768px) {
-        .sidebar {
-            width: 100%; /* Menú ocupa todo el ancho en móvil */
-            position: relative; /* Cambiar a relativo para no superponerse */
-            height: auto; /* Altura automática */
-            box-shadow: none; /* Quitar sombra */
-        }
-
-        body {
-            margin-left: 0; /* Sin margen para el menú en móvil */
-        }
-
-        .font-section {
-            padding: 0.5em; /* Reducir padding en móvil */
-            max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-        }
-
-        .font-info-container {
-            flex-direction: column; /* Disposición vertical en móvil */
-            align-items: center; /* Centrar contenido */
-            width: 100%; /* Asegura que ocupe el ancho completo */
-        }
-
-        .info-box,
-        .font-box {
-            width: 100%; /* Cada caja ocupa el 100% en móvil */
-            margin-bottom: 1em; /* Margen inferior para separación */
-        }
-    }
 </style>
     
 </head>
