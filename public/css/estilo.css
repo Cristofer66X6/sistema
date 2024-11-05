@@ -335,7 +335,7 @@ body.logo-page {
 /* Estilos para pantallas móviles (max-width: 768px) */
 @media (max-width: 768px) {
   .container {
-      width: 100vw; /* Asegura que ocupe todo el ancho del viewport en móvil */
+      width: 100%; /* Asegura que ocupe todo el ancho del viewport en móvil */
       margin: 0; /* Elimina márgenes, para que ocupe todo el espacio horizontal */
       padding: 10px; /* Ajusta el padding para mejorar el diseño en móvil */
       box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
