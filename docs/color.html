@@ -42,6 +42,14 @@ body {
     margin-left: 220px; /* Deja espacio para el menú */
     transition: margin-left 0.3s; /* Transición suave para el margen */
     overflow-x: hidden; /* Evitar scroll horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-left: 220px; /* Desplazamos el encabezado para que esté a la derecha del menú */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho */
 }
 
 .color-section {
@@ -51,6 +59,7 @@ body {
     padding: 1em;
     max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
     box-sizing: border-box; /* Incluye el padding en el ancho */
+    margin-left: 220px; /* Deja espacio para el menú lateral */
 }
 
 .color-box {
@@ -59,6 +68,7 @@ body {
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     overflow: hidden; /* Evita que el contenido interno cause scroll */
+    margin-bottom: 1em;
 }
 
 .color-swatch {
@@ -96,15 +106,22 @@ hello-world {
         margin-left: 0; /* Sin margen para el menú en móvil */
     }
 
+    header {
+        margin-left: 0; /* El encabezado ocupará todo el ancho en pantallas pequeñas */
+        padding-top: 80px; /* Se da un padding top para que no se superponga con el menú */
+    }
+
     .color-section {
         padding: 0.5em; /* Reducir padding en móvil */
         max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+        margin-left: 0; /* Eliminar el margen izquierdo */
     }
 
     .color-box {
         flex-direction: row; /* Disposición horizontal en móviles */
         align-items: center; /* Centrar contenido */
         width: 100%; /* Ancho completo en móviles */
+        padding: 1em; /* Ajustar padding en móvil */
     }
 
     .color-swatch {
@@ -118,8 +135,6 @@ hello-world {
 }
 
     </style>
-    
-    
 </head>
 <body>
     <div class="sidebar">

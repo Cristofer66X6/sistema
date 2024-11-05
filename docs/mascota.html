@@ -25,7 +25,12 @@
             z-index: 1000; /* Asegura que el menú esté por encima del contenido */
             box-sizing: border-box; /* Incluye el padding en el ancho */
         }
-    
+
+        .sidebar h2 {
+            margin: 0;
+            padding: 10px 0;
+        }
+
         .sidebar a {
             display: block;
             color: black;
@@ -35,50 +40,64 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-    
+
         .sidebar a:hover {
             background-color: #151d33; /* Color al pasar el mouse */
             color: white; /* Cambia el color del texto al pasar el mouse */
         }
-    
+
         body {
             margin-left: 220px; /* Deja espacio para el menú */
             transition: margin-left 0.3s; /* Transición suave para el margen */
             overflow-x: hidden; /* Evitar scroll horizontal */
+            margin: 0;
+            padding: 0;
         }
-    
-        .color-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5em; /* Espacio entre los recuadros */
+
+        header {
+            margin-left: 220px; /* Desplazamos el encabezado para que esté a la derecha del menú */
+            padding: 20px;
+            box-sizing: border-box; /* Incluye el padding en el ancho */
+        }
+
+        /* Ajuste en la sección principal */
+        .mascota {
             padding: 1em;
             max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
             box-sizing: border-box; /* Incluye el padding en el ancho */
+            margin-left: 220px; /* Desplazamos el contenido para que se alinee con el menú */
         }
-    
-        .color-box {
-            display: flex; /* Usar flexbox para disposición horizontal */
-            padding: 1em;
+
+        h1, h2, h3 {
+            font-size: 2em;
+            margin-top: 1.5em;
+            margin-left: 220px; /* Alinea el h1 al mismo nivel que el resto del contenido */
+        }
+
+        /* Párrafos con descripción de la mascota */
+        p.esmi-description {
+            background-color: #f2f2f2; /* Fondo gris claro */
+            border: 1px solid #dcdcdc; /* Borde gris suave */
+            padding: 1em; /* Relleno interno */
             border-radius: 8px; /* Bordes redondeados */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            box-sizing: border-box; /* Incluye el padding en el ancho */
+            margin: 1em 0; /* Separación entre párrafos */
+            max-width: calc(100% - 220px); /* Evitar que el contenido de los párrafos se desborde */
+            box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+            margin-left: 220px; /* Desplaza los párrafos al lado del menú */
         }
-    
-        .color-swatch {
-            width: 150px; /* Ancho del recuadro de color */
-            height: 150px; /* Alto del recuadro de color */
-            border-radius: 8px; /* Bordes redondeados */
-            margin-right: 1em; /* Espacio entre color y texto */
-            flex-shrink: 0; /* Evita que se reduzca el tamaño en flex */
+
+        footer {
+            margin-left: 220px; /* Ajuste en el pie de página */
+            padding: 1em;
+            box-sizing: border-box;
+            max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
         }
-    
-        .color-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centrar contenido verticalmente */
-            flex-grow: 1; /* Permite que ocupe el espacio restante */
+
+        footer .btn-primary2 {
+            margin: 0 10px;
         }
-    
+
         /* Estilos responsivos */
         @media (max-width: 768px) {
             .sidebar {
@@ -87,31 +106,43 @@
                 height: auto; /* Altura automática */
                 box-shadow: none; /* Quitar sombra */
             }
-    
+
             body {
                 margin-left: 0; /* Sin margen para el menú en móvil */
             }
-    
-            .color-section {
-                padding: 0.5em; /* Reducir padding en móvil */
+
+            header {
+                margin-left: 0; /* El encabezado ocupará todo el ancho en pantallas pequeñas */
+                padding-top: 80px; /* Padding top para evitar que se superponga con el menú */
+            }
+
+            .mascota {
+                margin-left: 0; /* Eliminar margen izquierdo en pantallas pequeñas */
                 max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+                padding: 0.5em; /* Reducir padding en móvil */
             }
-    
-            .color-box {
-                flex-direction: column; /* Disposición vertical en móvil */
-                align-items: center; /* Centrar contenido */
-                width: 100%; /* Ancho completo en móviles */
-                padding: 1em; /* Ajustar padding interno */
+
+            h1, h2, h3 {
+                font-size: 1.5em; /* Reducir el tamaño de los encabezados */
             }
-    
-            .color-swatch {
-                margin-right: 0; /* Sin margen a la derecha en móvil */
-                margin-bottom: 1em; /* Margen inferior para separación */
+
+            p.esmi-description {
+                font-size: 1em; /* Reducir el tamaño de los párrafos */
+                margin: 1em 0; /* Agregar margen entre párrafos */
+            }
+
+            .mascota .logo-component,
+            .mascota .image-downloader {
+                width: 100%; /* Hacer que los componentes de la mascota ocupen todo el ancho */
+            }
+
+            footer {
+                margin-left: 0; /* Eliminar margen izquierdo */
+                max-width: 100%; /* Asegura que el footer ocupe todo el ancho en móvil */
+                padding: 0.5em; /* Reducir padding en el footer en móviles */
             }
         }
     </style>
-    
-    
 </head>
 <body class="logo-page">
     <div class="sidebar">
@@ -184,7 +215,6 @@
     </section>
 
     <footer>
-        
         <a href="/font.html" class="btn-primary2">FUENTES</a>
         <div style="height: 80px;"></div> 
         <a href="/fundacion.html" class="btn-primary2">FUNDACIÓN</a>
