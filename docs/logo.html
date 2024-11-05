@@ -11,115 +11,98 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-      /* Estilos del menú lateral */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #ffc629; /* Color de fondo del menú */
-    color: black; /* Color del texto */
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
-    z-index: 1000; /* Asegura que el menú esté por encima del contenido */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
-}
-
-.sidebar a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #151d33; /* Color al pasar el mouse */
-    color: white; /* Cambia el color del texto al pasar el mouse */
-}
-
-body {
-    margin-left: 220px; /* Deja espacio para el menú */
-    transition: margin-left 0.3s; /* Transición suave para el margen */
-    overflow-x: hidden; /* Evitar scroll horizontal */
-}
-
-.color-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em; /* Espacio entre los recuadros */
-    padding: 1em;
-    max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
-}
-
-.color-box {
-    display: flex; /* Usar flexbox para disposición horizontal */
-    padding: 1em;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    overflow: hidden; /* Evita que el contenido interno cause scroll */
-}
-
-.color-swatch {
-    width: 150px; /* Ancho del recuadro de color */
-    height: 150px; /* Alto del recuadro de color */
-    border-radius: 8px; /* Bordes redondeados */
-    margin-right: 1em; /* Espacio entre color y texto */
-    flex-shrink: 0; /* Evita que se reduzca el tamaño en flex */
-}
-
-.color-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrar contenido verticalmente */
-}
-
-/* Nuevo estilo para aumentar el tamaño del texto "Colores" */
-hello-world {
-    font-size: 4em; /* Aumenta el tamaño de la fuente */
-    font-weight: 700; /* Hace el texto más negrita */
-    margin: 0; /* Elimina márgenes por defecto */
-    flex: 0 1 auto; /* Permite que el texto ocupe solo el espacio necesario */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
+  /* Estilos del menú lateral */
     .sidebar {
-        width: 100%; /* Menú ocupa todo el ancho en móvil */
-        position: relative; /* Cambiar a relativo para no superponerse */
-        height: auto; /* Altura automática */
-        box-shadow: none; /* Quitar sombra */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #ffc629; /* Color de fondo del menú */
+        color: black; /* Color del texto */
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+        z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+        background-color: #151d33; /* Color al pasar el mouse */
+        color: white; /* Cambia el color del texto al pasar el mouse */
     }
 
     body {
-        margin-left: 0; /* Sin margen para el menú en móvil */
+        margin-left: 220px; /* Deja espacio para el menú */
+        transition: margin-left 0.3s; /* Transición suave para el margen */
+        overflow-x: hidden; /* Evitar scroll horizontal */
     }
 
-    .color-section {
-        padding: 0.5em; /* Reducir padding en móvil */
-        max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+    .font-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em; /* Espacio entre las secciones de fuentes */
+        padding: 1em;
+        max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
-    .color-box {
-        flex-direction: row; /* Disposición horizontal en móviles */
-        align-items: center; /* Centrar contenido */
-        width: 100%; /* Ancho completo en móviles */
+    .font-info-container {
+        display: flex; /* Usar flexbox para disposición horizontal */
+        justify-content: space-between; /* Separar elementos a los extremos */
+        width: 100%; /* Asegura que ocupe el ancho completo */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
-    .color-swatch {
-        margin-right: 1em; /* Margen derecho en móviles */
-        margin-bottom: 0; /* Sin margen inferior */
+    .info-box {
+        width: 50%; /* Ancho del recuadro de información */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
 
-    hello-world {
-        font-size: 2.5em; /* Ajustar tamaño de fuente en móvil */
+    .font-box {
+        width: 50%; /* Ancho del recuadro de fuente */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
     }
-}
 
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%; /* Menú ocupa todo el ancho en móvil */
+            position: relative; /* Cambiar a relativo para no superponerse */
+            height: auto; /* Altura automática */
+            box-shadow: none; /* Quitar sombra */
+        }
+
+        body {
+            margin-left: 0; /* Sin margen para el menú en móvil */
+        }
+
+        .font-section {
+            padding: 0.5em; /* Reducir padding en móvil */
+            max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+        }
+
+        .font-info-container {
+            flex-direction: column; /* Disposición vertical en móvil */
+            align-items: center; /* Centrar contenido */
+            width: 100%; /* Asegura que ocupe el ancho completo */
+        }
+
+        .info-box,
+        .font-box {
+            width: 100%; /* Cada caja ocupa el 100% en móvil */
+            margin-bottom: 1em; /* Margen inferior para separación */
+        }
+    }
 </style>
     
 </head>
