@@ -237,8 +237,8 @@ h1::after, h2::after, h3::after, h4::after {
 
 /* Ajuste del cuerpo para logo.html */
 body.logo-page {
-  margin-left: 220px;
-  padding-left: 20px;
+  margin-left: 180px;
+  padding-left: 0px;
 }
 
 .logo-page section {
