@@ -11,6 +11,11 @@
     <script type="module" src="/elements/logo-component.js"></script>
     <script type="module" src="/elements/image-downloader.js"></script>
     <style>
+        /* Establecer box-sizing para todos los elementos */
+        * {
+            box-sizing: border-box;
+        }
+
         /* Estilos del menú lateral */
         .sidebar {
             position: fixed;
@@ -23,7 +28,6 @@
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
             z-index: 1000; /* Asegura que el menú esté por encima del contenido */
-            box-sizing: border-box; /* Incluye el padding en el ancho */
         }
 
         .sidebar h2 {
@@ -46,6 +50,7 @@
             color: white; /* Cambia el color del texto al pasar el mouse */
         }
 
+        /* Estilos generales para el cuerpo */
         body {
             margin-left: 220px; /* Deja espacio para el menú */
             transition: margin-left 0.3s; /* Transición suave para el margen */
@@ -57,21 +62,20 @@
         header {
             margin-left: 220px; /* Desplazamos el encabezado para que esté a la derecha del menú */
             padding: 20px;
-            box-sizing: border-box; /* Incluye el padding en el ancho */
         }
 
-        /* Ajuste en la sección principal */
+        /* Ajustes en la sección de mascota */
         .mascota {
             padding: 1em;
             max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
             box-sizing: border-box; /* Incluye el padding en el ancho */
             margin-left: 220px; /* Desplazamos el contenido para que se alinee con el menú */
+            overflow-x: hidden; /* Evita que los elementos internos se desborden */
         }
 
         h1, h2, h3 {
             font-size: 2em;
             margin-top: 1.5em;
-            margin-left: 220px; /* Alinea el h1 al mismo nivel que el resto del contenido */
         }
 
         /* Párrafos con descripción de la mascota */
@@ -131,15 +135,15 @@
                 margin: 1em 0; /* Agregar margen entre párrafos */
             }
 
-            .mascota .logo-component,
-            .mascota .image-downloader {
-                width: 100%; /* Hacer que los componentes de la mascota ocupen todo el ancho */
-            }
-
             footer {
                 margin-left: 0; /* Eliminar margen izquierdo */
                 max-width: 100%; /* Asegura que el footer ocupe todo el ancho en móvil */
                 padding: 0.5em; /* Reducir padding en el footer en móviles */
+            }
+
+            /* Asegurar que los componentes no se desborden */
+            logo-component, image-downloader {
+                width: 100%;
             }
         }
     </style>
