@@ -146,6 +146,15 @@
                 width: 100%;
             }
         }
+        /* Estilos para los párrafos en dispositivos móviles */
+@media (max-width: 768px) {
+    p.esmi-description {
+        max-width: 100%; /* Asegura que los párrafos ocupen todo el ancho disponible */
+        margin-left: 0;  /* Elimina el margen izquierdo para que no haya espacio extra */
+        margin-right: 0; /* Elimina el margen derecho */
+        padding: 1em;    /* Mantiene el padding dentro de los márgenes */
+    }
+}
     </style>
 </head>
 <body class="logo-page">

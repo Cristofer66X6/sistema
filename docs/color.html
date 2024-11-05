@@ -63,88 +63,91 @@
         padding: 1em;
         max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
         margin-left: 220px; /* Deja espacio para el menú lateral */
+        word-wrap: break-word; /* Evita que las palabras se desborden */
+        overflow-wrap: break-word; /* Asegura que las palabras largas no se corten */
      }
 
      .color-box {
         display: flex;
+        flex-direction: row; /* Alineación en fila para pantallas grandes */
+        align-items: center; /* Centrar contenido */
         padding: 1em;
-        border-radius: 8px; /* Bordes redondeados */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-        overflow: hidden; /* Evita que el contenido interno cause scroll */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Evita el scroll dentro de los recuadros */
         margin-bottom: 1em;
-        width: 100%; /* Asegura que ocupe el 100% del contenedor disponible */
-        box-sizing: border-box; /* Incluye el padding en el ancho total */
+        width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word; /* Permite que el texto se ajuste en lugar de desbordarse */
+        overflow-wrap: break-word;
      }
 
      .color-swatch {
-        width: 150px; /* Ancho del recuadro de color */
-        height: 150px; /* Alto del recuadro de color */
-        border-radius: 8px; /* Bordes redondeados */
-        margin-right: 1em; /* Espacio entre color y texto */
-        flex-shrink: 0; /* Evita que se reduzca el tamaño en flex */
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        margin-right: 1em;
+        flex-shrink: 0; /* Evita que el tamaño cambie */
      }
 
      .color-info {
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centrar contenido verticalmente */
+        justify-content: center;
+        word-wrap: break-word; /* Evita que el texto se desborde */
+        overflow-wrap: break-word;
      }
 
-     /* Nuevo estilo para aumentar el tamaño del texto "Colores" */
+     /* Estilo para la fuente de 'Colores' */
      hello-world {
-        font-size: 4em; /* Aumenta el tamaño de la fuente */
-        font-weight: 700; /* Hace el texto más negrita */
-        margin: 0; /* Elimina márgenes por defecto */
-        flex: 0 1 auto; /* Permite que el texto ocupe solo el espacio necesario */
+        font-size: 4em;
+        font-weight: 700;
+        margin: 0;
+        flex: 0 1 auto;
      }
 
      /* Estilos responsivos */
      @media (max-width: 768px) {
         .sidebar {
-            width: 100%; /* Menú ocupa todo el ancho en móvil */
-            position: relative; /* Cambiar a relativo para no superponerse */
-            height: auto; /* Altura automática */
-            box-shadow: none; /* Quitar sombra */
+            width: 100%;
+            position: relative;
+            height: auto;
+            box-shadow: none;
         }
 
         body {
-            margin-left: 0; /* Sin margen para el menú en móvil */
+            margin-left: 0;
         }
 
         header {
-            margin-left: 0; /* El encabezado ocupará todo el ancho en pantallas pequeñas */
-            padding-top: 80px; /* Se da un padding top para que no se superponga con el menú */
+            margin-left: 0;
+            padding-top: 80px;
         }
 
         .color-section {
-            padding: 0.5em; /* Reducir padding en móvil */
-            max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-            margin-left: 0; /* Eliminar el margen izquierdo */
+            padding: 0.5em;
+            max-width: 100%;
+            margin-left: 0;
         }
 
         .color-box {
-            flex-direction: row; /* Disposición horizontal en móviles */
-            align-items: center; /* Centrar contenido */
-            width: 100%; /* Ancho completo en móviles */
-            padding: 1em; /* Ajustar padding en móvil */
-        }
-
-        .color-swatch {
-            margin-right: 1em; /* Margen derecho en móviles */
-            margin-bottom: 0; /* Sin margen inferior */
+            flex-direction: column; /* Disposición vertical en móviles */
+            align-items: flex-start;
+            width: 100%;
+            padding: 1em;
         }
 
         hello-world {
-            font-size: 2.5em; /* Ajustar tamaño de fuente en móvil */
+            font-size: 2.5em;
         }
      }
 
-     /* Asegurarse de que las imágenes se ajusten dentro del contenedor */
+     /* Ajustes para la imagen */
      .hello-image {
         max-width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto; /* Centra la imagen en el contenedor */
+        margin: 0 auto;
      }
 
     </style>
