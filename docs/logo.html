@@ -11,8 +11,8 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
- /* Estilos del menú lateral */
-.sidebar {
+  /* Estilos del menú lateral */
+  .sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,97 +41,68 @@
     color: white; /* Cambia el color del texto al pasar el mouse */
 }
 
-/* Estilos globales del body */
 body {
-    margin-left: 220px; /* Deja espacio para el menú lateral */
+    margin-left: 220px; /* Deja espacio para el menú */
     transition: margin-left 0.3s; /* Transición suave para el margen */
     overflow-x: hidden; /* Evitar scroll horizontal */
-    font-family: Arial, sans-serif; /* Fuente base */
-    height: 100%; /* Altura al 100% */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el cálculo de la altura y el ancho */
 }
 
-/* Sección de colores */
-.color-section {
+.font-section {
     display: flex;
     flex-direction: column;
-    gap: 1em; /* Espacio entre los recuadros */
+    gap: 2em; /* Espacio entre las secciones de fuentes */
     padding: 1em;
     max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
     box-sizing: border-box; /* Incluye el padding en el ancho */
-    overflow-y: auto; /* Permite scroll en el contenido si es necesario */
 }
 
-/* Aquí aseguramos que los recuadros ocupen el 100% de la pantalla en móvil */
-.color-box {
+.font-info-container {
     display: flex; /* Usar flexbox para disposición horizontal */
-    padding: 1em;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    width: 100%; /* Asegura que ocupe el 100% del contenedor */
+    justify-content: space-between; /* Separar elementos a los extremos */
+    width: 100%; /* Asegura que ocupe el ancho completo */
     box-sizing: border-box; /* Incluye el padding en el ancho */
-    overflow: hidden; /* Evita que el contenido interno cause scroll */
 }
 
-/* Estilos responsivos para dispositivos móviles */
+.info-box {
+    width: 50%; /* Ancho del recuadro de información */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+.font-box {
+    width: 50%; /* Ancho del recuadro de fuente */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+/* Estilos responsivos */
 @media (max-width: 768px) {
     .sidebar {
         width: 100%; /* Menú ocupa todo el ancho en móvil */
         position: relative; /* Cambiar a relativo para no superponerse */
         height: auto; /* Altura automática */
         box-shadow: none; /* Quitar sombra */
-        padding: 0; /* Eliminar padding */
     }
 
-    /* Estilo global para body */
     body {
         margin-left: 0; /* Sin margen para el menú en móvil */
     }
 
-    /* Ajustes de la sección de colores */
-    .color-section {
-        margin-left: 0; /* Sin margen para el menú en móvil */
-        padding: 0.5em; /* Reducir el padding en móvil */
+    .font-section {
+        padding: 0.5em; /* Reducir padding en móvil */
         max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-        height: auto; /* Altura automática en móvil */
-        overflow-y: auto; /* Permite scroll vertical */
     }
 
-    /* Ajustar el tamaño de las cajas de color en móviles */
-    .color-box {
+    .font-info-container {
         flex-direction: column; /* Disposición vertical en móvil */
         align-items: center; /* Centrar contenido */
-        width: 100%; /* Ancho completo en móviles */
-        padding: 0.5em; /* Ajustar padding para evitar desbordamiento */
-        margin: 0; /* Eliminar margen */
+        width: 100%; /* Asegura que ocupe el ancho completo */
     }
 
-    /* Ajustar los márgenes y disposición de la información de color */
-    .color-swatch {
-        margin-right: 0; /* Sin margen a la derecha en móvil */
+    .info-box,
+    .font-box {
+        width: 100%; /* Cada caja ocupa el 100% en móvil */
         margin-bottom: 1em; /* Margen inferior para separación */
     }
-
-    .color-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Centrar contenido verticalmente */
-        flex-grow: 1; /* Permite que ocupe el espacio restante */
-        overflow: hidden; /* Oculta el contenido que se desborda */
-        word-break: break-word; /* Permite que las palabras largas se dividan en varias líneas */
-        white-space: normal; /* Permite el uso de múltiples líneas */
-    }
-
-    /* Aseguramos que el logo-component ocupe todo el ancho disponible */
-    .logo-component {
-        width: 100%; /* Ocupa todo el ancho en móvil */
-        margin: 0; /* Sin margen */
-        padding: 0.5em; /* Ajuste del padding */
-        margin-left: 0; /* Asegura que no haya margen a la izquierda */
-    }
 }
-
-
 </style>
     
 </head>
