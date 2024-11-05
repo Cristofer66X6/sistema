@@ -278,10 +278,6 @@ body.logo-page {
     font-size: 18px; /* Ajustar tamaño de fuente */
   }
 
-  .container {
-    width: 90%; /* Contenedor más ancho en móviles */
-    max-width: 100%; /* Asegura que no exceda el contenedor */
-  }
 
   .font-section {
     margin-left: 0; /* Eliminar margen izquierdo */
