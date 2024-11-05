@@ -35,15 +35,14 @@ class LogoComponent extends SioElement {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     width: 100%; /* Ocupa todo el ancho disponible */
     max-width: 800px; /* Ancho máximo para el contenedor */
-    margin: 0 auto; /* Centra el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
 /* Estilos para pantallas móviles (max-width: 768px) */
 @media (max-width: 768px) {
     .container {
         width: 100vw; /* Asegura que ocupe todo el ancho del viewport en móvil */
-        margin-left: 0; /* Elimina el margen izquierdo */
-        margin-right: 0; /* Elimina el margen derecho */
+        margin: 0; /* Elimina márgenes, para que ocupe todo el espacio horizontal */
         padding: 10px; /* Ajusta el padding para mejorar el diseño en móvil */
         box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
     }
@@ -83,6 +82,7 @@ p {
         margin-bottom: 10px; /* Margen inferior para separación */
     }
 }
+
 
     `;
 
