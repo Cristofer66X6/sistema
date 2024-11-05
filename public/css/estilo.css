@@ -157,11 +157,11 @@ h1::after, h2::after, h3::after, h4::after {
   .container {
     width: 100vw; /* Asegura que ocupe todo el ancho del viewport */
     margin: 0; /* Elimina márgenes */
-    padding: 10px; /* Ajusta el padding para mejorar el diseño en móvil */
+    padding: 10px 0; /* Ajusta el padding para mejorar el diseño en móvil */
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
   }
 
-  /* Si tienes algún contenedor padre que pueda estar afectando, puedes añadir este estilo */
+  /* Elimina márgenes y paddings que pudieran estar causando el scroll horizontal */
   .component, .font-section, .image-wrapper {
     width: 100%; /* Asegura que los elementos hijos también ocupen todo el ancho */
     padding: 0;
