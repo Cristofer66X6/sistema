@@ -235,15 +235,7 @@ h1::after, h2::after, h3::after, h4::after {
   text-decoration: underline;
 }
 
-/* Ajuste del cuerpo para logo.html */
-body.logo-page {
-  margin-left: 180px;
-  padding-left: 0px;
-}
 
-.logo-page section {
-  padding: 20px;
-}
 
 image-downloader {
   display: flex;
