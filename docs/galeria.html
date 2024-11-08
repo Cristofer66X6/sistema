@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Medios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="icon" href="/PNG/PNG/7.png" type="image/x-icon">
+  <script type="module" src="/elements/media-component.js"></script>
+  <script type="module" src="/elements/hello-world.js"></script>
+  <script type="module" src="/elements/logo-component.js"></script>
+  <script type="module" src="/elements/image-downloader.js"></script>
+  <style>
+    /* Estilos generales */
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /* Menú lateral */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #ffc629;
+        color: black;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+        background-color: #151d33;
+        color: white;
+    }
+
+    body {
+        margin-left: 220px; /* Espacio para el menú lateral */
+        transition: margin-left 0.3s;
+    }
+
+    /* Asegura que el contenido ocupe el espacio restante sin desbordarse */
+    .font-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        padding: 1em;
+        max-width: calc(100% - 220px); /* Ajuste para el espacio del menú */
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    /* Centrar y poner en negritas el h3 */
+.font-section h3 {
+    text-align: center; /* Centra el texto */
+    font-weight: bold;  /* Pone el texto en negritas */
+    font-size: 2.5em;
+}
+
+
+    .media-component .container {
+        max-width: 100%;
+    }
+
+    .media-component img,
+    .media-component video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .download-link {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .download-link:hover {
+        background-color: #0056b3;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        /* Sidebar en dispositivos móviles */
+        .sidebar {
+            width: 100%;
+            position: relative;
+            height: auto;
+            box-shadow: none;
+        }
+
+        body {
+            margin-left: 0; /* El contenido ocupa todo el ancho en móviles */
+        }
+
+        .font-section {
+            padding: 0.5em;
+            max-width: 100%;
+        }
+
+        .media-component img,
+        .media-component video {
+            max-width: 100%;
+        }
+
+        /* Slider ajustado para móviles */
+        .media-slider {
+            max-width: 100%; /* El slider ocupa el 100% de la pantalla */
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+
+        .media-wrapper {
+            width: 100%; /* Asegura que el contenido se ajuste al tamaño de la pantalla */
+            flex-wrap: wrap; /* Los elementos se ajustan al tamaño disponible */
+            justify-content: center; /* Centra los elementos dentro del contenedor */
+        }
+
+        .media-item {
+            width: 100%; /* Los elementos ocupan todo el ancho disponible */
+            margin-bottom: 15px; /* Espaciado entre elementos */
+        }
+
+        .arrow-button {
+            font-size: 1.5em; /* Ajustar el tamaño de los botones en móvil */
+            padding: 10px;
+        }
+
+        .media-item {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Estilos para el slider de imágenes y videos */
+    .media-slider {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20 auto;
+        overflow: hidden;
+    }
+
+    .media-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: calc(100% * 20); /* Aumentamos el número de elementos visibles a 20 para que ocupe más espacio */
+        flex-wrap: nowrap; /* Evita que los elementos se ajusten a varias filas */
+        justify-content: flex-start; /* Alinea los elementos desde el principio */
+    }
+
+    /* Cada item dentro del carrusel de imágenes */
+    .media-item {
+        position: relative;
+        flex: 0 0 auto; /* Cada item debe tener su propio ancho y no se expandirá */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        display: flex;
+        flex-direction: column; /* Apila los elementos (imagen + botón) verticalmente */
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px; /* Espacio entre las imágenes */
+    }
+
+    /* Estilo para el componente de la imagen */
+    logo-component {
+        display: block;
+        width: 100%;
+        max-height: 500px; /* Puedes ajustar el tamaño de la imagen según sea necesario */
+        object-fit: contain;
+    }
+
+    /* Estilo del botón de descarga */
+    image-downloader {
+        margin-top: 10px;  /* Un pequeño margen entre la imagen y el botón */
+        width: 100%; /* Se asegura de que el botón ocupe el 100% del ancho del contenedor */
+        display: block; /* Hace que el componente sea un bloque */
+        text-align: center;  /* Centra el contenido del botón */
+    }
+
+    .media-component img,
+    .media-component video {
+        width: 100%;
+        max-height: 700px; /* Altura máxima para las imágenes */
+        object-fit: contain;
+        display: none; /* Inicialmente no se muestra nada */
+    }
+
+    /* Botones de navegación */
+    .arrow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 10;
+        padding: 15px; /* Aumenté el área clicable */
+        border-radius: 50%;
+    }
+
+    .arrow-left {
+        left: 20px;  /* Mueve el botón hacia la izquierda */
+    }
+
+    .arrow-right {
+        right: 20px;  /* Aumenté el margen derecho para separarlo más */
+    }
+
+  </style>
+</head>
+<body class="logo-page">
+    <div class="sidebar">
+        <h2><a href="/">COHACER</a></h2>
+        <a href="/galeria.html">GALERÍA</a>
+        <a href="/logo.html">LOGO</a>
+        <a href="/font.html">TIPOGRAFÍA</a>
+        <a href="/color.html">COLOR</a>
+        <a href="/mascota.html">ESMI</a>
+        <a href="/fundacion.html">FUNDACIÓN</a>
+    </div>
+
+  <header>
+    <div class="hello-container">
+      <hello-world id="logo" text="LOGO">GALERIA</hello-world>
+      <img src="/PNG/PNG/27.png" alt="Descripción de la imagen" class="hello-image">
+    </div>
+  </header> 
+
+  <section class="font-section">
+    <!-- Sección añadida antes de las imágenes -->
+    <h3>Sigue a la TRIBU</h3>
+    <p>Únete al grupo de WhatsApp y no te pierdas las sesiones informativas y de capacitación cada miércoles a las 7:30p.m. por Zoom.</p>
+
+   <!-- Contenedor centrado para el enlace -->
+<div style="text-align: center; margin: 20px 0;">
+    <a href="https://wa.me/1234567890" target="_blank" style="text-decoration: none;">
+      <button style="background-color: #25D366; color: white; font-size: 16px; padding: 10px 20px; border: none; border-radius: 5px; display: inline-flex; align-items: center; font-weight: bold; cursor: pointer;">
+        <!-- Ícono de WhatsApp más grande y fuera del botón -->
+        <img src="/PNG/PNG/what.jpg" alt="WhatsApp" style="width: 40px; margin-right: 10px;">
+        ÚNETE AL GRUPO EN WHATSAPP
+      </button>
+    </a>
+  </div>
+  
+  
+
+    <h2>Descarga la parrilla del mes de imagenes</h2>
+    <div class="media-slider" id="imageSlider">
+        <button class="arrow-button arrow-left" onclick="moveMedia('image', -1)">&#9664;</button>
+        <div class="media-wrapper" id="imageWrapper">
+            <div class="media-item">
+                <logo-component imageUrl="/PNG/PNG/7.png" description="LOGO"></logo-component>
+                <image-downloader></image-downloader>
+            </div>
+            <div class="media-item">
+                <logo-component imageUrl="/PNG/PNG/8.png" description="LOGO"></logo-component>
+                <image-downloader></image-downloader>
+            </div>
+            <div class="media-item">
+                <logo-component imageUrl="/PNG/PNG/9.png" description="LOGO"></logo-component>
+                <image-downloader></image-downloader>
+            </div>
+            <div class="media-item">
+                <logo-component imageUrl="/PNG/PNG/10.png" description="LOGO"></logo-component>
+                <image-downloader></image-downloader>
+            </div>
+            <div class="media-item">
+                <logo-component imageUrl="/PNG/PNG/11.png" description="LOGO"></logo-component>
+                <image-downloader></image-downloader>
+            </div>
+            <div class="media-item">
+                <logo-component imageUrl="/PNG/PNG/12.png" description="LOGO"></logo-component>
+                <image-downloader></image-downloader>
+            </div>
+        </div>
+        
+        <button class="arrow-button arrow-right" onclick="moveMedia('image', 1)">&#9654;</button>
+    </div>
+    
+
+    <h2>Videoteca del mes</h2>
+    <div class="media-slider" id="videoSlider">
+        <button class="arrow-button arrow-left" onclick="moveMedia('video', -1)">&#9664;</button>
+        <div class="media-wrapper" id="videoWrapper">
+            <media-component mediaUrl="/PNG/PNG/omerta.mp4" mediaType="video" description="Video 1: Descripción"></media-component>
+            <media-component mediaUrl="/PNG/PNG/omerta.mp4" mediaType="video" description="Video 2: Descripción"></media-component>
+        </div>
+        <button class="arrow-button arrow-right" onclick="moveMedia('video', 1)">&#9654;</button>
+    </div>
+
+
+    <h2>PDFs</h2>
+    <div class="media-slider" id="pdfSlider">
+        <button class="arrow-button arrow-left" onclick="moveMedia('pdf', -1)">&#9664;</button>
+    <div class="media-wrapper" id="pdfWrapper">
+        <media-component mediaUrl="/PNG/PNG/re.pdf" mediaType="pdf" description="PDF 1: Descripción"></media-component>
+        <media-component mediaUrl="/docs/ejemplo2.pdf" mediaType="pdf" description="PDF 2: Descripción"></media-component>
+    </div>
+    <button class="arrow-button arrow-right" onclick="moveMedia('pdf', 1)">&#9654;</button>
+</div>
+
+  </section>
+
+  <footer>
+    <a href="/font.html" class="btn-primary2">FUENTES</a>
+  </footer>
+
+  <script>
+    let currentIndexImage = 0; // Índice para las imágenes
+    let currentIndexVideo = 0; // Índice para los videos
+    let currentIndexPdf = 0; // Índice para los PDFs
+
+    // Función para mover entre las imágenes, videos o PDFs
+    function moveMedia(type, direction) {
+        let wrapper, items, currentIndex;
+
+        if (type === 'image') {
+            wrapper = document.getElementById('imageWrapper');
+            items = wrapper.children;
+            currentIndex = currentIndexImage;
+        } else if (type === 'video') {
+            wrapper = document.getElementById('videoWrapper');
+            items = wrapper.children;
+            currentIndex = currentIndexVideo;
+        } else if (type === 'pdf') {
+            wrapper = document.getElementById('pdfWrapper');
+            items = wrapper.children;
+            currentIndex = currentIndexPdf;
+        }
+
+        // Calcular el nuevo índice
+        currentIndex += direction;
+
+        // Asegurar que el índice no se desborde
+        if (currentIndex < 0) currentIndex = items.length - 1;
+        if (currentIndex >= items.length) currentIndex = 0;
+
+        // Ocultar todos los elementos y mostrar el actual
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.display = 'none';
+        }
+
+        items[currentIndex].style.display = 'block';
+
+        // Actualizar el índice actual
+        if (type === 'image') {
+            currentIndexImage = currentIndex;
+        } else if (type === 'video') {
+            currentIndexVideo = currentIndex;
+        } else if (type === 'pdf') {
+            currentIndexPdf = currentIndex;
+        }
+    }
+
+    // Inicializar la galería mostrando el primer elemento de cada tipo
+    window.onload = function() {
+        moveMedia('image', 0);
+        moveMedia('video', 0);
+        moveMedia('pdf', 0);
+    };
+  </script>
+
+</body>
+</html>

@@ -31,5 +31,9 @@ router.get('/fundacion.html', (req, res) => {
   res.sendFile(path.join(__dirname, './docs/fundacion.html'));
 });
 
+router.get('/galeria.html', (req, res) => {
+  res.sendFile(path.join(__dirname, './docs/galeria.html'));
+});
+
 
 export default router;
