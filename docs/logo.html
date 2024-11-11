@@ -11,114 +11,173 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-  /* Estilos generales */
-body {
-    margin: 0; /* Eliminar márgenes */
-    overflow-x: hidden; /* Evitar scroll horizontal */
-    overflow-y: auto; /* Asegurar que el scroll vertical sea controlado */
-}
-
-/* Menú lateral */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #ffc629;
-    color: black;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    box-sizing: border-box;
-}
-
-.sidebar a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #151d33;
-    color: white;
-}
-
-body {
-    margin-left: 220px; /* Espacio para el menú lateral */
-    transition: margin-left 0.3s;
-}
-
-/* Asegura que el contenido ocupe el espacio restante sin desbordarse */
-.font-section {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    padding: 1em;
-    max-width: calc(100% - 220px); /* Ajuste para el espacio del menú */
-    box-sizing: border-box;
-    overflow-x: hidden; /* Asegura que no se desborde horizontalmente */
-}
-
-/* Ajustes a la clase logo-component */
-.logo-component .container {
-    max-width: 100%; /* Cambiar max-width a 100% para evitar desbordamientos */
-}
-
-.logo-component img {
-    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
-    height: auto;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    /* Menú lateral en móviles */
-    .sidebar {
-        width: 100%; /* Menú ocupa todo el ancho en dispositivos móviles */
-        position: relative; /* Cambiar a relativo para que no se superponga */
-        height: auto;
-        box-shadow: none; /* Eliminar sombra */
-    }
-
+    /* Estilos generales */
     body {
-        margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
+        margin: 0; /* Eliminar márgenes */
+        overflow-x: hidden; /* Evitar scroll horizontal */
+        overflow-y: auto; /* Asegurar que el scroll vertical sea controlado */
     }
-
-    /* Asegura que el contenido ocupe todo el ancho en dispositivos móviles */
+  
+    /* Menú lateral */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #ffc629;
+        color: black;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+  
+    .sidebar a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+  
+    .sidebar a:hover {
+        background-color: #151d33;
+        color: white;
+    }
+  
+    body {
+        margin-left: 220px; /* Espacio para el menú lateral */
+        transition: margin-left 0.3s;
+    }
+  
+    /* Asegura que el contenido ocupe el espacio restante sin desbordarse */
     .font-section {
-        padding: 0.5em;
-        max-width: 100%; /* Eliminar limitación de ancho */
-    }
-
-    .font-info-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
+        gap: 2em;
+        padding: 1em;
+        max-width: calc(100% - 220px); /* Ajuste para el espacio del menú */
+        box-sizing: border-box;
+        overflow-x: hidden; /* Asegura que no se desborde horizontalmente */
     }
-
-    .info-box, .font-box {
-        width: 100%; /* Asegura que las cajas ocupen todo el ancho en móviles */
-        margin-bottom: 1em; /* Separación entre elementos */
-    }
-
-    /* Asegura que las imágenes se ajusten bien en pantallas pequeñas */
-    .logo-component img {
-        max-width: 100%; /* Ajuste para evitar desbordamientos */
-    }
-
+  
+    /* Ajustes a la clase logo-component */
     .logo-component .container {
-        width: 100%; /* Asegura que el contenedor ocupe todo el ancho en pantallas pequeñas */
-        margin: 0; /* Elimina márgenes en pantallas pequeñas */
+        max-width: 100%; /* Cambiar max-width a 100% para evitar desbordamientos */
     }
-}
+  
+    .logo-component img {
+        max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+        height: auto;
+    }
+  
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        /* Menú lateral en móviles */
+        .sidebar {
+            width: 100%; /* Menú ocupa todo el ancho en dispositivos móviles */
+            position: relative; /* Cambiar a relativo para que no se superponga */
+            height: auto;
+            box-shadow: none; /* Eliminar sombra */
+        }
+  
+        body {
+            margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
+        }
+  
+        /* Asegura que el contenido ocupe todo el ancho en dispositivos móviles */
+        .font-section {
+            padding: 0.5em;
+            max-width: 100%; /* Eliminar limitación de ancho */
+        }
+  
+        .font-info-container {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+  
+        .info-box, .font-box {
+            width: 100%; /* Asegura que las cajas ocupen todo el ancho en móviles */
+            margin-bottom: 1em; /* Separación entre elementos */
+        }
+  
+        /* Asegura que las imágenes se ajusten bien en pantallas pequeñas */
+        .logo-component img {
+            max-width: 100%; /* Ajuste para evitar desbordamientos */
+        }
+  
+        .logo-component .container {
+            width: 100%; /* Asegura que el contenedor ocupe todo el ancho en pantallas pequeñas */
+            margin: 0; /* Elimina márgenes en pantallas pequeñas */
+        }
+    }
+  
+    /* Estilos para dispositivos con 300px de ancho (móviles muy pequeños) */
+    @media (max-width: 300px) {
+        .hello-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px; /* Reducir padding */
+            width: 100%; /* Asegurarse que ocupe todo el ancho disponible */
+        }
+  
+        hello-world {
+            font-size: 12px; /* Reducir el tamaño de la fuente en móviles pequeños */
+            font-weight: bold;
+            text-align: center; /* Centrar el texto */
+            margin-bottom: 8px; /* Espacio entre el texto y la imagen */
+            white-space: normal; /* Permitir que el texto se divida en varias líneas si es necesario */
+            overflow: visible; /* Mostrar todo el texto */
+            word-wrap: break-word; /* Romper palabras largas si es necesario */
+        }
+  
+        .hello-image {
+            width: 80%; /* Ajustar el tamaño de la imagen para pantallas pequeñas */
+            max-width: 100px; /* Limitar el ancho máximo de la imagen */
+        }
+  
+        /* Centrado y ajuste del logo-component en pantallas móviles pequeñas */
+        .logo-component {
+            display: flex;
+            flex-direction: column; /* Apilar la imagen y descripción verticalmente */
+            justify-content: center; /* Centrar contenido verticalmente */
+            align-items: center; /* Centrar contenido horizontalmente */
+            width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+            padding: 10px; /* Añadir padding adicional para mejorar el espaciado */
+        }
+  
+        /* En dispositivos móviles de 300px de ancho */
+    @media (max-width: 300px) {
+        logo-component {
+            display: flex;
+            flex-direction: column; /* Apilar la imagen y descripción verticalmente */
+            justify-content: center; /* Centrar contenido verticalmente */
+            align-items: center; /* Centrar contenido horizontalmente */
+            padding: 5px; /* Reducir padding en móviles pequeños */
+            width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+        }
 
+        logo-component img {
+            width: 60%; /* Ajustar aún más el tamaño de la imagen en pantallas pequeñas */
+            max-width: 80px; /* Limitar el tamaño máximo de la imagen */
+            margin-bottom: 8px; /* Añadir espacio debajo de la imagen */
+        }
 
+        logo-component .description {
+            font-size: 9px; /* Reducir el tamaño de la fuente de la descripción */
+            text-align: center; /* Centrar el texto de la descripción */
+            margin-top: 5px; /* Espacio entre la imagen y la descripción */
+        }
+    }
+  }
 </style>
-    
+
+
 </head>
 <body class="logo-page">
     <div class="sidebar">

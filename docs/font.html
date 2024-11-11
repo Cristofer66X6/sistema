@@ -10,7 +10,8 @@
   <link rel="icon" href="/PNG/PNG/7.png" type="image/x-icon">
   <link rel="stylesheet" href="/css/estilo.css">
   <script type="module" src="/elements/hello-world.js"></script>
-  <style>
+
+<style>
     /* Estilos del menú lateral */
     .sidebar {
         position: fixed;
@@ -80,6 +81,8 @@
     .font-box {
         width: 50%; /* Ancho del recuadro de fuente */
         box-sizing: border-box; /* Incluye el padding en el ancho */
+        word-wrap: break-word; /* Permite que las palabras largas se rompan */
+        word-break: break-word; /* Rompe las palabras largas si es necesario */
     }
 
     /* Estilos responsivos */
@@ -112,7 +115,35 @@
             margin-bottom: 1em; /* Margen inferior para separación */
         }
     }
-  </style>
+
+    /* Estilos para pantallas con 300px de ancho (dispositivos móviles pequeños) */
+    @media (max-width: 300px) {
+        .font-box {
+            word-wrap: break-word; /* Permite que las palabras largas se dividan */
+            word-break: break-word; /* Rompe las palabras si es necesario */
+            font-size: 12px; /* Reducir el tamaño de la fuente en pantallas muy pequeñas */
+        }
+
+        /* Estilos para los botones en el footer en pantallas pequeñas */
+        footer {
+            display: flex;
+            flex-direction: column; /* Cambiar a disposición vertical */
+            align-items: center; /* Centrar los botones */
+            width: 100%; /* Asegura que ocupe todo el ancho */
+            padding: 10px 0; /* Espaciado vertical entre los botones */
+        }
+
+        footer .btn-primary2 {
+            width: 70%; /* Reducir el tamaño de los botones */
+            font-size: 14px; /* Reducir el tamaño de la fuente */
+            padding: 8px 10px; /* Reducir el padding para hacer los botones más compactos */
+            margin: 5px 0; /* Espaciado vertical entre los botones */
+            text-align: center; /* Centrar el texto dentro de los botones */
+        }
+    }
+</style>
+
+
 </head>
 <body class="font-page">
   <div class="sidebar">
