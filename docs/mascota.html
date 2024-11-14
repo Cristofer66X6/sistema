@@ -11,203 +11,204 @@
     <script type="module" src="/elements/logo-component.js"></script>
     <script type="module" src="/elements/image-downloader.js"></script>
     <style>
-        /* Establecer box-sizing para todos los elementos */
-        * {
-            box-sizing: border-box;
-        }
-    
-        /* Estilos del menú lateral */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 100%;
-            background-color: #ffc629; /* Color de fondo del menú */
-            color: black; /* Color del texto */
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
-            z-index: 1000; /* Asegura que el menú esté por encima del contenido */
-        }
-    
-        .sidebar h2 {
-            margin: 0;
-            padding: 10px 0;
-        }
-    
-        .sidebar a {
-            display: block;
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-    
-        .sidebar a:hover {
-            background-color: #151d33; /* Color al pasar el mouse */
-            color: white; /* Cambia el color del texto al pasar el mouse */
-        }
-    
-        /* Estilos generales para el cuerpo */
-        body {
-            margin-left: 220px; /* Deja espacio para el menú */
-            transition: margin-left 0.3s; /* Transición suave para el margen */
-            overflow-x: hidden; /* Evitar scroll horizontal */
-            margin: 0;
-            padding: 0;
-        }
-    
-        header {
-            margin-left: 220px; /* Desplazamos el encabezado para que esté a la derecha del menú */
-            padding: 20px;
-        }
-    
-        /* Ajustes en la sección de mascota */
-        .mascota {
-            padding: 1em;
-            max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
-            box-sizing: border-box; /* Incluye el padding en el ancho */
-            margin-left: 220px; /* Desplazamos el contenido para que se alinee con el menú */
-            overflow-x: hidden; /* Evita que los elementos internos se desborden */
-        }
-    
-        h1, h2, h3 {
-            font-size: 2em;
-            margin-top: 1.5em;
-        }
-    
-        /* Párrafos con descripción de la mascota */
-        p.esmi-description {
-            background-color: #f2f2f2; /* Fondo gris claro */
-            border: 1px solid #dcdcdc; /* Borde gris suave */
-            padding: 1em; /* Relleno interno */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            margin: 1em 0; /* Separación entre párrafos */
-            max-width: calc(100% - 220px); /* Evitar que el contenido de los párrafos se desborde */
-            box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
-            margin-left: 220px; /* Desplaza los párrafos al lado del menú */
-        }
-    
-        footer {
-            margin-left: 220px; /* Ajuste en el pie de página */
-            padding: 1em;
-            box-sizing: border-box;
-            max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
-        }
-    
-        footer .btn-primary2 {
-            margin: 0 10px;
-        }
-    
-        /* Estilos para centrar el h1 */
-        h1 {
-            text-align: center;
-            margin: 0 auto;
-            font-size: 2.5em; /* Ajuste de tamaño si es necesario */
-            margin-top: 50px; /* Espacio por encima del título */
-        }
-    
-        /* Estilos responsivos */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%; /* Menú ocupa todo el ancho en móvil */
-                position: relative; /* Cambiar a relativo para no superponerse */
-                height: auto; /* Altura automática */
-                box-shadow: none; /* Quitar sombra */
-            }
-    
-            body {
-                margin-left: 0; /* Sin margen para el menú en móvil */
-            }
-    
-            header {
-                margin-left: 0; /* El encabezado ocupará todo el ancho en pantallas pequeñas */
-                padding-top: 80px; /* Padding top para evitar que se superponga con el menú */
-            }
-    
-            .mascota {
-                margin-left: 0; /* Eliminar margen izquierdo en pantallas pequeñas */
-                max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-                padding: 0.5em; /* Reducir padding en móvil */
-            }
-    
-            h1, h2, h3 {
-                font-size: 1.5em; /* Reducir el tamaño de los encabezados */
-            }
-    
-            p.esmi-description {
-                font-size: 1em; /* Reducir el tamaño de los párrafos */
-                margin: 1em 0; /* Agregar margen entre párrafos */
-            }
-    
-            footer {
-                margin-left: 0; /* Eliminar margen izquierdo */
-                max-width: 100%; /* Asegura que el footer ocupe todo el ancho en móvil */
-                padding: 0.5em; /* Reducir padding en el footer en móviles */
-            }
-    
-            /* Asegurar que los componentes no se desborden */
-            logo-component, image-downloader {
-                width: 100%;
-            }
-        }
-        
-        /* Estilos para los botones en el footer en dispositivos de 300px de ancho */
-        @media (max-width: 300px) {
-            footer {
-                display: flex;
-                flex-direction: column; /* Apilar los botones verticalmente */
-                align-items: center; /* Centrar los botones */
-                width: 100%; /* Ocupa todo el ancho disponible */
-                padding: 10px 0; /* Espaciado vertical entre los botones */
-            }
-    
-            footer .btn-primary2 {
-                width: 70%; /* Reducir el ancho de los botones */
-                font-size: 14px; /* Reducir el tamaño de la fuente */
-                padding: 8px 10px; /* Reducir el padding para hacer los botones más compactos */
-                margin: 5px 0; /* Añadir margen entre los botones */
-                text-align: center; /* Centrar el texto dentro del botón */
-                width: 90%; /* Aumentar el ancho del botón */
-            }
-        }
-    
-        /* Estilos para los párrafos en dispositivos móviles */
-        @media (max-width: 768px) {
-            p.esmi-description {
-                max-width: 100%; /* Asegura que los párrafos ocupen todo el ancho disponible */
-                margin-left: 0;  /* Elimina el margen izquierdo para que no haya espacio extra */
-                margin-right: 0; /* Elimina el margen derecho */
-                padding: 1em;    /* Mantiene el padding dentro de los márgenes */
-            }
-        }
+       /* Establecer box-sizing para todos los elementos */
+* {
+    box-sizing: border-box;
+}
 
-        /* En dispositivos móviles de 300px de ancho */
-    @media (max-width: 300px) {
-        logo-component {
-            display: flex;
-            flex-direction: column; /* Apilar la imagen y descripción verticalmente */
-            justify-content: center; /* Centrar contenido verticalmente */
-            align-items: center; /* Centrar contenido horizontalmente */
-            padding: 5px; /* Reducir padding en móviles pequeños */
-            width: 100%; /* Asegurar que ocupe todo el ancho disponible */
-        }
+/* Estilos del menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #ffc629; /* Color de fondo del menú */
+    color: black; /* Color del texto */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+    z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+}
 
-        logo-component img {
-            width: 60%; /* Ajustar aún más el tamaño de la imagen en pantallas pequeñas */
-            max-width: 80px; /* Limitar el tamaño máximo de la imagen */
-            margin-bottom: 8px; /* Añadir espacio debajo de la imagen */
-        }
+.sidebar h2 {
+    margin: 0;
+    padding: 10px 0;
+}
 
-        logo-component .description {
-            font-size: 9px; /* Reducir el tamaño de la fuente de la descripción */
-            text-align: center; /* Centrar el texto de la descripción */
-            margin-top: 5px; /* Espacio entre la imagen y la descripción */
-        }
+.sidebar a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #151d33; /* Color al pasar el mouse */
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Estilos generales para el cuerpo */
+body {
+    margin-left: 220px; /* Deja espacio para el menú */
+    transition: margin-left 0.3s; /* Transición suave para el margen */
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-left: 220px; /* Desplazamos el encabezado para que esté a la derecha del menú */
+    padding: 20px;
+}
+
+/* Ajustes en la sección de mascota */
+.mascota {
+    padding: 1em;
+    max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+    margin-left: 220px; /* Desplazamos el contenido para que se alinee con el menú */
+    overflow-x: hidden; /* Evita que los elementos internos se desborden */
+}
+
+h1, h2, h3 {
+    font-size: 2em;
+    margin-top: 1.5em;
+}
+
+/* Párrafos con descripción de la mascota */
+p.esmi-description {
+    background-color: #f2f2f2; /* Fondo gris claro */
+    border: 1px solid #dcdcdc; /* Borde gris suave */
+    padding: 1em; /* Relleno interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 1em auto; /* Centra el párrafo y agrega separación entre ellos */
+    max-width: 600px; /* Limita el ancho máximo para evitar que se estire demasiado */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+    text-align: center; /* Centra el texto dentro del párrafo */
+}
+
+footer {
+    margin-left: 220px; /* Ajuste en el pie de página */
+    padding: 1em;
+    box-sizing: border-box;
+    max-width: calc(100% - 220px); /* Ajusta el ancho considerando el menú */
+}
+
+footer .btn-primary2 {
+    margin: 0 10px;
+}
+
+/* Estilos para centrar el h1 */
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2.5em; /* Ajuste de tamaño si es necesario */
+    margin-top: 50px; /* Espacio por encima del título */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Menú ocupa todo el ancho en móvil */
+        position: relative; /* Cambiar a relativo para no superponerse */
+        height: auto; /* Altura automática */
+        box-shadow: none; /* Quitar sombra */
     }
+
+    body {
+        margin-left: 0; /* Sin margen para el menú en móvil */
+    }
+
+    header {
+        margin-left: 0; /* El encabezado ocupará todo el ancho en pantallas pequeñas */
+        padding-top: 80px; /* Padding top para evitar que se superponga con el menú */
+    }
+
+    .mascota {
+        margin-left: 0; /* Eliminar margen izquierdo en pantallas pequeñas */
+        max-width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+        padding: 0.5em; /* Reducir padding en móvil */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em; /* Reducir el tamaño de los encabezados */
+    }
+
+    p.esmi-description {
+        font-size: 1em; /* Reducir el tamaño de los párrafos */
+        margin: 1em 0; /* Agregar margen entre párrafos */
+    }
+
+    footer {
+        margin-left: 0; /* Eliminar margen izquierdo */
+        max-width: 100%; /* Asegura que el footer ocupe todo el ancho en móvil */
+        padding: 0.5em; /* Reducir padding en el footer en móviles */
+    }
+
+    /* Asegurar que los componentes no se desborden */
+    logo-component, image-downloader {
+        width: 100%;
+    }
+}
+
+/* Estilos para los botones en el footer en dispositivos de 300px de ancho */
+@media (max-width: 300px) {
+    footer {
+        display: flex;
+        flex-direction: column; /* Apilar los botones verticalmente */
+        align-items: center; /* Centrar los botones */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 10px 0; /* Espaciado vertical entre los botones */
+    }
+
+    footer .btn-primary2 {
+        width: 70%; /* Reducir el ancho de los botones */
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+        padding: 8px 10px; /* Reducir el padding para hacer los botones más compactos */
+        margin: 5px 0; /* Añadir margen entre los botones */
+        text-align: center; /* Centrar el texto dentro del botón */
+        width: 90%; /* Aumentar el ancho del botón */
+    }
+}
+
+/* Estilos para los párrafos en dispositivos móviles */
+@media (max-width: 768px) {
+    p.esmi-description {
+        max-width: 100%; /* Asegura que los párrafos ocupen todo el ancho disponible */
+        margin-left: 0;  /* Elimina el margen izquierdo para que no haya espacio extra */
+        margin-right: 0; /* Elimina el margen derecho */
+        padding: 1em;    /* Mantiene el padding dentro de los márgenes */
+    }
+}
+
+/* En dispositivos móviles de 300px de ancho */
+@media (max-width: 300px) {
+    logo-component {
+        display: flex;
+        flex-direction: column; /* Apilar la imagen y descripción verticalmente */
+        justify-content: center; /* Centrar contenido verticalmente */
+        align-items: center; /* Centrar contenido horizontalmente */
+        padding: 5px; /* Reducir padding en móviles pequeños */
+        width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    }
+
+    logo-component img {
+        width: 60%; /* Ajustar aún más el tamaño de la imagen en pantallas pequeñas */
+        max-width: 80px; /* Limitar el tamaño máximo de la imagen */
+        margin-bottom: 8px; /* Añadir espacio debajo de la imagen */
+    }
+
+    logo-component .description {
+        font-size: 9px; /* Reducir el tamaño de la fuente de la descripción */
+        text-align: center; /* Centrar el texto de la descripción */
+        margin-top: 5px; /* Espacio entre la imagen y la descripción */
+    }
+}
+
     
     </style>
 </head>

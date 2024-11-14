@@ -62,14 +62,14 @@ h1 {
 h1::after, h2::after, h3::after, h4::after {
   content: "";
   display: block;
-  width: 90%;
+  width: 100%; /* Se ajusta a 100% del ancho disponible */
   height: 2px;
   background-color: #d3d3d3;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -10px;
+  left: 0; /* Alineado completamente a la izquierda */
+  bottom: -10px; /* Mantiene la separación de 10px debajo del título */
 }
+
 
 .components {
   padding: 20px;

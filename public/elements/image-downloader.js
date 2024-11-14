@@ -47,6 +47,7 @@ class ImageDownloader extends SioElement {
     text-align: center; /* Centra el texto dentro del contenedor */
     padding: 20px; /* Espaciado interno del contenedor */
     width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 /* Estilos para el h3 (texto "Descargar Imagen") */
@@ -69,9 +70,8 @@ class ImageDownloader extends SioElement {
     transition: background-color 0.3s, transform 0.3s; /* Transición suave para el fondo */
     margin-top: 10px; /* Espacio superior */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    display: block; /* Asegura que el botón sea un bloque */
-    margin-left: auto; /* Auto-margen izquierdo para centrarlo */
-    margin-right: auto; /* Auto-margen derecho para centrarlo */
+    display: inline-block; /* Cambiar a inline-block para un comportamiento más fluido */
+    width: auto; /* Ajustar al contenido */
 }
 
 /* Efecto hover para el botón */
@@ -116,6 +116,78 @@ p {
     color: red; /* Color del mensaje de error */
     text-align: center; /* Centra el texto de error */
     margin-top: 10px; /* Espacio superior */
+}
+
+/* Media query para dispositivos con un ancho máximo de 768px (para móviles y tabletas pequeñas) */
+@media (max-width: 768px) {
+    .download-container {
+        padding: 15px; /* Reducir el padding en móviles */
+    }
+
+    /* Ajustes para el botón de descarga */
+    .download-button {
+        width: 80%; /* El botón ocupará el 80% del ancho disponible */
+        padding: 8px 16px; /* Ajustar el tamaño del botón para dispositivos más pequeños */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+
+    /* Ajustes para el campo de entrada */
+    input[type="number"] {
+        width: 80%; /* El campo de entrada ocupará el 80% del ancho */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+
+    /* Ajustes para el label */
+    label {
+        width: 80%; /* El label ocupará el 80% del ancho */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+
+    /* Ajustes para el mensaje de error */
+    p {
+        width: 80%; /* El mensaje de error también será más pequeño */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+}
+
+/* Media query para dispositivos muy pequeños (300px en adelante) */
+@media (max-width: 300px) {
+    .download-container {
+        padding: 10px; /* Espaciado más pequeño */
+    }
+
+    /* Ajustes para el botón de descarga */
+    .download-button {
+        width: 90%; /* El botón ocupará el 90% del ancho */
+        padding: 8px 12px; /* Ajustar el tamaño del botón */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+
+    /* Ajustes para el campo de entrada */
+    input[type="number"] {
+        width: 90%; /* El campo de entrada ocupará el 90% del ancho */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+
+    /* Ajustes para el label */
+    label {
+        width: 90%; /* El label ocupará el 90% del ancho */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
+
+    /* Ajustes para el mensaje de error */
+    p {
+        width: 90%; /* El mensaje de error también será más pequeño */
+        margin-left: auto;
+        margin-right: auto; /* Mantener centrado */
+    }
 }
 
 

@@ -12,230 +12,275 @@
   <script type="module" src="/elements/logo-component.js"></script>
   <script type="module" src="/elements/image-downloader.js"></script>
   <style>
-    /* Estilos generales */
-    body {
-        margin: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
+/* Estilos generales */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
-    /* Menú lateral */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200px;
-        height: 100%;
-        background-color: #ffc629;
-        color: black;
-        padding: 20px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        box-sizing: border-box;
-    }
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #ffc629;
+    color: black;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    box-sizing: border-box;
+}
 
-    .sidebar a {
-        display: block;
-        color: black;
-        text-decoration: none;
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
+.sidebar a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-    .sidebar a:hover {
-        background-color: #151d33;
-        color: white;
-    }
+.sidebar a:hover {
+    background-color: #151d33;
+    color: white;
+}
 
-    body {
-        margin-left: 220px; /* Espacio para el menú lateral */
-        transition: margin-left 0.3s;
-    }
+body {
+    margin-left: 220px; /* Espacio para el menú lateral */
+    transition: margin-left 0.3s;
+}
 
-    /* Asegura que el contenido ocupe el espacio restante sin desbordarse */
-    .font-section {
-        display: flex;
-        flex-direction: column;
-        gap: 2em;
-        padding: 1em;
-        max-width: calc(100% - 220px); /* Ajuste para el espacio del menú */
-        box-sizing: border-box;
-        overflow-x: hidden;
-    }
+/* Asegura que el contenido ocupe el espacio restante sin desbordarse */
+.font-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+    max-width: calc(100% - 220px); /* Ajuste para el espacio del menú */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
 
-    /* Centrar y poner en negritas el h3 */
+/* Centrar y poner en negritas el h3 */
 .font-section h3 {
     text-align: center; /* Centra el texto */
     font-weight: bold;  /* Pone el texto en negritas */
     font-size: 2.5em;
 }
 
+.media-component .container {
+    max-width: 100%;
+}
 
-    .media-component .container {
+.media-component img,
+.media-component video {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.download-link {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos responsivos */
+@media (min-width: 300px) and (max-width: 768px) {
+    /* Sidebar en dispositivos móviles */
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        box-shadow: none;
+    }
+
+    body {
+        margin-left: 0; /* El contenido ocupa todo el ancho en móviles */
+    }
+
+    .font-section {
+        padding: 0.5em;
         max-width: 100%;
     }
 
     .media-component img,
     .media-component video {
         max-width: 100%;
-        height: auto;
     }
 
-    p {
-        margin: 0;
-        font-size: 1.2em;
-        text-align: center;
-    }
-
-    .download-link {
-        margin-top: 10px;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-        display: inline-block;
-        text-align: center;
-    }
-
-    .download-link:hover {
-        background-color: #0056b3;
-    }
-
-    /* Estilos responsivos */
-    @media (max-width: 768px) {
-        /* Sidebar en dispositivos móviles */
-        .sidebar {
-            width: 100%;
-            position: relative;
-            height: auto;
-            box-shadow: none;
-        }
-
-        body {
-            margin-left: 0; /* El contenido ocupa todo el ancho en móviles */
-        }
-
-        .font-section {
-            padding: 0.5em;
-            max-width: 100%;
-        }
-
-        .media-component img,
-        .media-component video {
-            max-width: 100%;
-        }
-
-        /* Slider ajustado para móviles */
-        .media-slider {
-            max-width: 100%; /* El slider ocupa el 100% de la pantalla */
-            margin: 0 auto;
-            overflow-x: hidden;
-        }
-
-        .media-wrapper {
-            width: 100%; /* Asegura que el contenido se ajuste al tamaño de la pantalla */
-            flex-wrap: wrap; /* Los elementos se ajustan al tamaño disponible */
-            justify-content: center; /* Centra los elementos dentro del contenedor */
-        }
-
-        .media-item {
-            width: 100%; /* Los elementos ocupan todo el ancho disponible */
-            margin-bottom: 15px; /* Espaciado entre elementos */
-        }
-
-        .arrow-button {
-            font-size: 1.5em; /* Ajustar el tamaño de los botones en móvil */
-            padding: 10px;
-        }
-
-        .media-item {
-            display: block;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-    }
-
-    /* Estilos para el slider de imágenes y videos */
+    /* Slider ajustado para móviles */
     .media-slider {
-        position: relative;
+        max-width: 100%; /* El slider ocupa el 100% de la pantalla */
+        margin: 0 auto;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20 auto;
-        overflow: hidden;
+        flex-direction: column; /* Apilar imagen y botones */
+        align-items: center; /* Centra los elementos */
+        overflow-x: hidden;
     }
 
     .media-wrapper {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: calc(100% * 20); /* Aumentamos el número de elementos visibles a 20 para que ocupe más espacio */
-        flex-wrap: nowrap; /* Evita que los elementos se ajusten a varias filas */
-        justify-content: flex-start; /* Alinea los elementos desde el principio */
+        width: 100%; /* Asegura que el contenido se ajuste al tamaño de la pantalla */
+        flex-wrap: wrap; /* Los elementos se ajustan al tamaño disponible */
+        justify-content: center; /* Centra los elementos dentro del contenedor */
     }
 
-    /* Cada item dentro del carrusel de imágenes */
     .media-item {
-        position: relative;
-        flex: 0 0 auto; /* Cada item debe tener su propio ancho y no se expandirá */
-        width: 100%; /* Ocupa todo el ancho disponible */
+        width: 100%; /* Los elementos ocupan todo el ancho disponible */
+        margin-bottom: 15px; /* Espaciado entre elementos */
         display: flex;
-        flex-direction: column; /* Apila los elementos (imagen + botón) verticalmente */
+        flex-direction: column; /* Apilar imagen y botones */
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px; /* Espacio entre las imágenes */
+        position: relative;
     }
 
-    /* Estilo para el componente de la imagen */
-    logo-component {
-        display: block;
-        width: 100%;
-        max-height: 500px; /* Puedes ajustar el tamaño de la imagen según sea necesario */
-        object-fit: contain;
-    }
-
-    /* Estilo del botón de descarga */
-    image-downloader {
-        margin-top: 10px;  /* Un pequeño margen entre la imagen y el botón */
-        width: 100%; /* Se asegura de que el botón ocupe el 100% del ancho del contenedor */
-        display: block; /* Hace que el componente sea un bloque */
-        text-align: center;  /* Centra el contenido del botón */
-    }
-
-    .media-component img,
-    .media-component video {
-        width: 100%;
-        max-height: 700px; /* Altura máxima para las imágenes */
-        object-fit: contain;
-        display: none; /* Inicialmente no se muestra nada */
-    }
-
-    /* Botones de navegación */
+    /* Colocamos los botones debajo de la imagen y un poco más abajo */
     .arrow-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        font-size: 1.5em; /* Ajustar el tamaño de los botones en móvil */
+        padding: 10px;
+        margin: 20px 0; /* Aumentamos el margen para moverlos un poco más abajo */
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         border: none;
-        font-size: 2em;
         cursor: pointer;
-        z-index: 10;
-        padding: 15px; /* Aumenté el área clicable */
         border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex; /* Usamos flexbox para centrar la flecha */
+        justify-content: center; /* Centra la flecha horizontalmente */
+        align-items: center; /* Centra la flecha verticalmente */
+        position: relative; /* Lo mantenemos dentro del flujo */
     }
 
     .arrow-left {
-        left: 20px;  /* Mueve el botón hacia la izquierda */
+        order: 1; /* Colocamos el botón izquierdo arriba */
     }
 
     .arrow-right {
-        right: 20px;  /* Aumenté el margen derecho para separarlo más */
+        order: 2; /* Colocamos el botón derecho abajo */
     }
+
+    /* Ajustar el estilo del componente de la imagen */
+    logo-component {
+        display: block;
+        width: 100%;
+        max-height: 500px; /* Ajustamos el tamaño de la imagen si es necesario */
+        object-fit: contain;
+    }
+
+    /* Ajustes de la zona de descarga */
+    .download-link {
+        margin-top: 20px; /* Separamos la zona de descarga de los botones */
+    }
+}
+
+/* Estilos para el slider de imágenes y videos */
+.media-slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20 auto;
+    overflow: hidden;
+}
+
+.media-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(100% * 20); /* Aumentamos el número de elementos visibles a 20 para que ocupe más espacio */
+    flex-wrap: nowrap; /* Evita que los elementos se ajusten a varias filas */
+    justify-content: flex-start; /* Alinea los elementos desde el principio */
+}
+
+/* Cada item dentro del carrusel de imágenes */
+.media-item {
+    position: relative;
+    flex: 0 0 auto; /* Cada item debe tener su propio ancho y no se expandirá */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    display: flex;
+    flex-direction: column; /* Apila los elementos (imagen + botón) verticalmente */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre las imágenes */
+}
+
+/* Estilo para el componente de la imagen */
+logo-component {
+    display: block;
+    width: 100%;
+    max-height: 500px; /* Puedes ajustar el tamaño de la imagen según sea necesario */
+    object-fit: contain;
+}
+
+/* Estilo del botón de descarga */
+image-downloader {
+    margin-top: 10px;  /* Un pequeño margen entre la imagen y el botón */
+    width: 100%; /* Se asegura de que el botón ocupe el 100% del ancho del contenedor */
+    display: block; /* Hace que el componente sea un bloque */
+    text-align: center;  /* Centra el contenido del botón */
+}
+
+.media-component img,
+.media-component video {
+    width: 100%;
+    max-height: 700px; /* Altura máxima para las imágenes */
+    object-fit: contain;
+    display: none; /* Inicialmente no se muestra nada */
+}
+
+/* Botones de navegación */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5em; /* Tamaño reducido */
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px; /* Ajuste de área clicable */
+    border-radius: 50%;
+    width: 50px;  /* Tamaño del botón */
+    height: 50px; /* Tamaño del botón */
+    display: flex; /* Usamos flexbox para centrar la flecha */
+    justify-content: center; /* Centra la flecha horizontalmente */
+    align-items: center; /* Centra la flecha verticalmente */
+}
+
+.arrow-left {
+    left: 10px;  /* Se acerca más al borde izquierdo */
+}
+
+.arrow-right {
+    right: 10px;  /* Se acerca más al borde derecho */
+}
+
+/* Estilo de la flecha dentro de los botones */
+.arrow-button i {
+    font-size: 1.5em; /* Tamaño de la flecha, puedes reducir aún más si lo deseas */
+    color: white;  /* Asegura que la flecha sea blanca */
+}
 
   </style>
 </head>
@@ -394,14 +439,10 @@
     <div class="media-slider" id="videoSlider">
         <button class="arrow-button arrow-left" onclick="moveMedia('video', -1)">&#9664;</button>
         <div class="media-wrapper" id="videoWrapper">
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/2.mp4
-" mediaType="video" description="Video 1:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/3%20ejercicios%20para%20mejorar%20en%20la%20chamba.mp4
-" mediaType="video" description="Video 2:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/90%20DIAS%20PARA%20TU%20TITULO.mp4
-" mediaType="video" description="Video 3:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/ADMINISTRACI%C3%93N%202%20DE%20ABRIL.mp4
-" mediaType="video" description="Video 4:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/2.mp4" mediaType="video" description="Video 1:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/3%20ejercicios%20para%20mejorar%20en%20la%20chamba.mp4" mediaType="video" description="Video 2:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/90%20DIAS%20PARA%20TU%20TITULO.mp4" mediaType="video" description="Video 3:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/ADMINISTRACI%C3%93N%202%20DE%20ABRIL.mp4" mediaType="video" description="Video 4:"></media-component>
             <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Administrar%20la%20cham%20sin%20t%C3%ADtulo.mp4
 " mediaType="video" description="Video 5:"></media-component>
             <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/COHACER%201%20Citio%20Web.mp4
@@ -434,28 +475,33 @@
 " mediaType="video" description="Video 19:"></media-component>
             <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/PORQUE%20MI%20T%C3%8DTULO%20NO%20SALE%20A%20NOMBRE%20DE%20COHACER.mp4
 " mediaType="video" description="Video 20:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Porque%20COHACER%20es%20tan%20importante%20en%20M%C3%A9xico(1).mp4
-" mediaType="video" description="Video 21:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Puedo%20hacer%20UN%20COMBO%20bachillerato%20licenciatura.mp4
-" mediaType="video" description="Video 22:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Si%20me%20va%20dartiempo.mp4
-" mediaType="video" description="Video 23:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Tienen%20Guias%20en%20COHACER.mp4
-" mediaType="video" description="Video 24:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Tres%20habilidades%20de%20comunicaci%C3%B3n.mp4
-" mediaType="video" description="Video 25:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Tu%20%C3%A9xito%20a%20un%20paso%20de%20distancia%20.mp4
-" mediaType="video" description="Video 26:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/%C2%BFCUANTO%20TIEMPO%20LLEVA%20LA%20TITULACI%C3%93N%20POR%20EXPERIENCIA%20LABORAL.mp4
-" mediaType="video" description="Video 27:"></media-component>
-            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/%C2%BFqu%C3%A9%20es%20la%20titulaci%C3%B3n%20por%20experiencia%20laboral.mp4
-" mediaType="video" description="Video 28:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Porque%20COHACER%20es%20tan%20importante%20en%20M%C3%A9xico(1).mp4" mediaType="video" description="Video 21:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Puedo%20hacer%20UN%20COMBO%20bachillerato%20licenciatura.mp4" mediaType="video" description="Video 22:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Si%20me%20va%20dartiempo.mp4" mediaType="video" description="Video 23:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Tienen%20Guias%20en%20COHACER.mp4" mediaType="video" description="Video 24:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Tres%20habilidades%20de%20comunicaci%C3%B3n.mp4" mediaType="video" description="Video 25:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/Tu%20%C3%A9xito%20a%20un%20paso%20de%20distancia%20.mp4" mediaType="video" description="Video 26:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/%C2%BFCUANTO%20TIEMPO%20LLEVA%20LA%20TITULACI%C3%93N%20POR%20EXPERIENCIA%20LABORAL.mp4" mediaType="video" description="Video 27:"></media-component>
+            <media-component mediaUrl="https://storage.googleapis.com/cohacer-region/Parrilla%20Tribu%20Nov%202024/Videos/%C2%BFqu%C3%A9%20es%20la%20titulaci%C3%B3n%20por%20experiencia%20laboral.mp4" mediaType="video" description="Video 28:"></media-component>
         </div>
         <button class="arrow-button arrow-right" onclick="moveMedia('video', 1)">&#9654;</button>
     </div>
 
 
     <h2>Otras Herramientas</h2>
+
+    <div class="media-slider" id="pdfSlider">
+        <button class="arrow-button arrow-left" onclick="moveMedia('pdf', -1)">&#9664;</button>
+        <div class="media-wrapper" id="pdfWrapper">
+            <div class="media-item">
+                <pdf-downloader fileUrl="" description="PDF 1:"></pdf-downloader>
+            </div>
+            <div class="media-item">
+                <pdf-downloader fileUrl="" description="PDF 2:"></pdf-downloader>
+            </div>
+        </div>
+        <button class="arrow-button arrow-right" onclick="moveMedia('pdf', 1)">&#9654;</button>
+    </div>
 
   </section>
 
@@ -516,7 +562,8 @@
         moveMedia('video', 0);
         moveMedia('pdf', 0);
     };
-  </script>
+</script>
+
 
 </body>
 </html>
